@@ -14,6 +14,7 @@
 		5B9A7E02266D06A7008053F9 /* CWKSemua.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A7E00266D06A7008053F9 /* CWKSemua.xcdatamodeld */; };
 		5B9A7E04266D06A8008053F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B9A7E03266D06A8008053F9 /* Assets.xcassets */; };
 		5B9A7E07266D06A8008053F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9A7E05266D06A8008053F9 /* LaunchScreen.storyboard */; };
+		5BE53E60266DE6D20049BBF8 /* Landscape.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BE53E5F266DE6D20049BBF8 /* Landscape.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5B9A7E03266D06A8008053F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B9A7E06266D06A8008053F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B9A7E08266D06A8008053F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BE53E5F266DE6D20049BBF8 /* Landscape.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Landscape.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				5B9A7DF9266D06A7008053F9 /* SceneDelegate.swift */,
 				5B9A7DFB266D06A7008053F9 /* ViewController.swift */,
 				5B9A7DFD266D06A7008053F9 /* Main.storyboard */,
+				5BE53E5F266DE6D20049BBF8 /* Landscape.storyboard */,
 				5B9A7E03266D06A8008053F9 /* Assets.xcassets */,
 				5B9A7E05266D06A8008053F9 /* LaunchScreen.storyboard */,
 				5B9A7E08266D06A8008053F9 /* Info.plist */,
@@ -129,6 +132,7 @@
 			files = (
 				5B9A7E07266D06A8008053F9 /* LaunchScreen.storyboard in Resources */,
 				5B9A7E04266D06A8008053F9 /* Assets.xcassets in Resources */,
+				5BE53E60266DE6D20049BBF8 /* Landscape.storyboard in Resources */,
 				5B9A7DFF266D06A7008053F9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
