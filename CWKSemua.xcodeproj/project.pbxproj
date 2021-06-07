@@ -15,6 +15,8 @@
 		5B9A7E04266D06A8008053F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B9A7E03266D06A8008053F9 /* Assets.xcassets */; };
 		5B9A7E07266D06A8008053F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9A7E05266D06A8008053F9 /* LaunchScreen.storyboard */; };
 		5BE53E60266DE6D20049BBF8 /* Landscape.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BE53E5F266DE6D20049BBF8 /* Landscape.storyboard */; };
+		5BE53E6E266E1D280049BBF8 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE53E6D266E1D280049BBF8 /* HomePageViewController.swift */; };
+		5BE53E70266E1DF70049BBF8 /* GradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE53E6F266E1DF70049BBF8 /* GradientColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		5B9A7E06266D06A8008053F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B9A7E08266D06A8008053F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BE53E5F266DE6D20049BBF8 /* Landscape.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Landscape.storyboard; sourceTree = "<group>"; };
+		5BE53E6D266E1D280049BBF8 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		5BE53E6F266E1DF70049BBF8 /* GradientColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 		5BE53E65266E071C0049BBF8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5BE53E6D266E1D280049BBF8 /* HomePageViewController.swift */,
+				5BE53E6F266E1DF70049BBF8 /* GradientColor.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,8 +175,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B9A7DFC266D06A7008053F9 /* ViewController.swift in Sources */,
+				5BE53E70266E1DF70049BBF8 /* GradientColor.swift in Sources */,
 				5B9A7E02266D06A7008053F9 /* CWKSemua.xcdatamodeld in Sources */,
 				5B9A7DF8266D06A7008053F9 /* AppDelegate.swift in Sources */,
+				5BE53E6E266E1D280049BBF8 /* HomePageViewController.swift in Sources */,
 				5B9A7DFA266D06A7008053F9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
