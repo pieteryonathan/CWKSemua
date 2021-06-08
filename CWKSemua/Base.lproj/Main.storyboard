@@ -93,7 +93,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="I7S-Gb-AOy" kind="showDetail" id="VbB-9K-cik"/>
+                                    <segue destination="I7S-Gb-AOy" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="VbB-9K-cik"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1W-WT-6Cj">
@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="3595.3846153846152" y="115.16587677725119"/>
         </scene>
-        <!--Camera-->
+        <!--PageViewController-->
         <scene sceneID="II5-tW-cUt">
             <objects>
-                <viewControllerPlaceholder storyboardName="Camera" id="I7S-Gb-AOy" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="PageViewController" id="I7S-Gb-AOy" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="86E-01-Sbq"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opr-pz-Fr0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
