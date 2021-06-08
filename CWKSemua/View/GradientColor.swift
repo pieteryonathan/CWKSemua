@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 extension UIView{
-    public func settwogradient(){
+    public func setTwoGradient(width : CGFloat, height : CGFloat){
         let gradientlayer = CAGradientLayer()
-        gradientlayer.frame = CGRect(x: 0, y: 0, width: 344, height: 193)
+        gradientlayer.frame = CGRect(x: 0, y: 0, width: width, height: height)
         gradientlayer.colors = [UIColor(red: 0.26, green: 0.48, blue: 0.45, alpha: 1).cgColor,
                                 UIColor(red: 0.61, green: 0.85, blue: 0.56, alpha: 1).cgColor,
                                 UIColor(red: 0.16, green: 0.34, blue: 0.52, alpha: 1).cgColor]

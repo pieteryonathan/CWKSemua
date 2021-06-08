@@ -15,8 +15,9 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 
 //    @IBOutlet weak var camPreview: UIView!
     @IBOutlet weak var camPreview: UIView!
-
-    let cameraButton = UIView()
+    @IBOutlet weak var camButton: UIButton!
+    
+//    let cameraButton = UIView()
 
     let captureSession = AVCaptureSession()
 
@@ -36,20 +37,24 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
             startSession()
         }
     
-        cameraButton.isUserInteractionEnabled = true
+//        cameraButton.isUserInteractionEnabled = true
+//
+//        let cameraButtonRecognizer = UITapGestureRecognizer(target: self, action: #selector(CameraViewController.startCapture))
+//
+//        cameraButton.addGestureRecognizer(cameraButtonRecognizer)
+//
+//        cameraButton.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+//
+//        cameraButton.backgroundColor = UIColor.red
     
-        let cameraButtonRecognizer = UITapGestureRecognizer(target: self, action: #selector(CameraViewController.startCapture))
-    
-        cameraButton.addGestureRecognizer(cameraButtonRecognizer)
-    
-        cameraButton.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-    
-        cameraButton.backgroundColor = UIColor.red
-    
-        camPreview.addSubview(cameraButton)
+//        camPreview.addSubview(cameraButton)
     
     }
 
+    @IBAction func onClickCamButton(_ sender: Any) {
+        startCapture()
+    }
+    
     func setupPreview() {
         // Configure previewLayer
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)

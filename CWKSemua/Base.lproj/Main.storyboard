@@ -16,31 +16,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBv-3x-Oyu">
-                                <rect key="frame" x="22" y="408" width="344" height="193"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <inset key="titleEdgeInsets" minX="120" minY="150" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Back Court Training">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8R-pS-apf">
-                                <rect key="frame" x="22" y="184" width="344" height="193"/>
+                                <rect key="frame" x="22" y="184" width="344" height="299"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <inset key="titleEdgeInsets" minX="120" minY="150" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Front Court Training">
+                                <state key="normal" title="Front Court Footwork">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="xHc-Q7-n64" kind="show" id="F1a-uP-U8o"/>
+                                    <segue destination="xHc-Q7-n64" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="F1a-uP-U8o">
+                                        <segue key="commit" inheritsFrom="parent" id="o2k-eT-not"/>
+                                        <segue key="preview" inheritsFrom="commit" id="LBd-zb-z70"/>
+                                    </segue>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Train Your Footwork" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyE-v2-GQf">
-                                <rect key="frame" x="33" y="66" width="187" height="128"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Footwork Training" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyE-v2-GQf">
+                                <rect key="frame" x="33" y="66" width="259" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
@@ -51,8 +44,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="vjV-RJ-X5a"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="backcourttrainingbutton" destination="cBv-3x-Oyu" id="X83-Ok-238"/>
                         <outlet property="frontcourttrainingbutton" destination="H8R-pS-apf" id="0VC-vR-Ob5"/>
                     </connections>
                 </viewController>
@@ -60,28 +53,21 @@
             </objects>
             <point key="canvasLocation" x="1853.8461538461538" y="115.16587677725119"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="xmY-gf-C3P">
             <objects>
-                <viewController id="xHc-Q7-n64" sceneMemberID="viewController">
+                <viewController id="xHc-Q7-n64" customClass="DetailViewController" customModule="CWKSemua" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hdg-Bx-JU3">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Front Court Training" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcm-jO-TqG">
-                                <rect key="frame" x="16" y="99" width="213" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="esc-GS-VQx">
-                                <rect key="frame" x="23" y="151" width="344" height="293"/>
+                                <rect key="frame" x="23" y="175" width="344" height="293"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1W-WT-6Cj">
-                                <rect key="frame" x="23" y="476" width="97" height="23"/>
+                                <rect key="frame" x="23" y="476" width="124" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
@@ -96,22 +82,34 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egL-F3-qXK">
-                                <rect key="frame" x="122" y="675" width="146" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Front Court Footwork" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bm9-lD-K6b">
+                                <rect key="frame" x="23" y="65" width="344" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egL-F3-qXK">
+                                <rect key="frame" x="122" y="670" width="146" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Begin Exercise!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="I7S-Gb-AOy" kind="presentation" modalPresentationStyle="fullScreen" id="VbB-9K-cik"/>
+                                    <segue destination="I7S-Gb-AOy" kind="showDetail" id="VbB-9K-cik"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7zS-6T-Bcq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="6KM-0B-wnN"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="beginButton" destination="egL-F3-qXK" id="lBi-nP-OhL"/>
+                        <outlet property="descDetailLabel" destination="3Ft-3n-sqs" id="Bl2-zF-jPL"/>
+                        <outlet property="previewView" destination="esc-GS-VQx" id="WiB-9Z-eTr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hp-oH-n4U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -120,10 +118,10 @@
         <!--Camera-->
         <scene sceneID="II5-tW-cUt">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="opr-pz-Fr0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Camera" id="I7S-Gb-AOy" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="86E-01-Sbq"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="opr-pz-Fr0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3371.0144927536235" y="110.49107142857143"/>
         </scene>
@@ -154,8 +152,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Footwork" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLD-6Y-xpZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Footwork" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLD-6Y-xpZ">
                                 <rect key="frame" x="33" y="60" width="161" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -169,9 +168,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4Wp-e9-1Yl" firstAttribute="bottom" secondItem="cT4-UP-56N" secondAttribute="bottom" id="0YY-BR-co0"/>
-                            <constraint firstItem="cT4-UP-56N" firstAttribute="top" secondItem="iLD-6Y-xpZ" secondAttribute="bottom" id="ESw-TX-ad6"/>
                             <constraint firstItem="4Wp-e9-1Yl" firstAttribute="trailing" secondItem="cT4-UP-56N" secondAttribute="trailing" id="FNH-nn-mWp"/>
-                            <constraint firstItem="cT4-UP-56N" firstAttribute="top" secondItem="iLD-6Y-xpZ" secondAttribute="bottom" id="Uoa-Nx-kZI"/>
                             <constraint firstItem="cT4-UP-56N" firstAttribute="leading" secondItem="4Wp-e9-1Yl" secondAttribute="leading" id="bWG-Xp-M9L"/>
                             <constraint firstItem="4Wp-e9-1Yl" firstAttribute="bottom" secondItem="cT4-UP-56N" secondAttribute="bottom" id="wrg-Yz-abc"/>
                         </constraints>
@@ -185,11 +182,11 @@
         <!--Home-->
         <scene sceneID="jZO-kJ-X5P">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xh4-AU-huJ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="xh4-AU-huJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="x8L-8N-31h"/>
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="De3-Yq-xy1">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -205,6 +202,9 @@
             <point key="canvasLocation" x="944.92753623188412" y="115.84821428571428"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="F1a-uP-U8o"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="chart.bar.xaxis" catalog="system" width="128" height="98"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
@@ -214,8 +214,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
