@@ -20,6 +20,7 @@
 		A7FC63CE266E671100859CC0 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7FC63CD266E671100859CC0 /* Camera.storyboard */; };
 		A7FC63D6266E67A500859CC0 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FC63D5266E67A500859CC0 /* CameraViewController.swift */; };
 		A7FC63D9266E68FB00859CC0 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FC63D8266E68FB00859CC0 /* VideoCapture.swift */; };
+		A7FC6430266EE80D00859CC0 /* VideoPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FC642F266EE80D00859CC0 /* VideoPlaybackViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		A7FC63CD266E671100859CC0 /* Camera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		A7FC63D5266E67A500859CC0 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		A7FC63D8266E68FB00859CC0 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
+		A7FC642F266EE80D00859CC0 /* VideoPlaybackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaybackViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				5B9A7DF9266D06A7008053F9 /* SceneDelegate.swift */,
 				A7FC63D5266E67A500859CC0 /* CameraViewController.swift */,
 				A7FC63D8266E68FB00859CC0 /* VideoCapture.swift */,
+				A7FC642F266EE80D00859CC0 /* VideoPlaybackViewController.swift */,
 				A7FC63CD266E671100859CC0 /* Camera.storyboard */,
 				5B9A7DFB266D06A7008053F9 /* ViewController.swift */,
 				5B9A7DFD266D06A7008053F9 /* Main.storyboard */,
@@ -191,6 +194,7 @@
 				5B9A7DF8266D06A7008053F9 /* AppDelegate.swift in Sources */,
 				A7FC63D6266E67A500859CC0 /* CameraViewController.swift in Sources */,
 				5BE53E6E266E1D280049BBF8 /* HomePageViewController.swift in Sources */,
+				A7FC6430266EE80D00859CC0 /* VideoPlaybackViewController.swift in Sources */,
 				5B9A7DFA266D06A7008053F9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

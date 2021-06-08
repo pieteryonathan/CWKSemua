@@ -20,6 +20,11 @@
                                 <rect key="frame" x="166" y="768" width="82" height="30"/>
                                 <state key="normal" title="Flip Camera"/>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a1m-ZY-KCp">
+                                <rect key="frame" x="67" y="187" width="280" height="461"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="16u-M7-pf1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -29,10 +34,40 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cEx-5D-cp4"/>
+                    <connections>
+                        <outlet property="camPreview" destination="a1m-ZY-KCp" id="Gxl-6n-KIA"/>
+                        <segue destination="hVl-nf-6lq" kind="presentation" identifier="showVideo" id="Xyt-VK-ZqY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDA-fW-dmk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-338" y="-84"/>
+            <point key="canvasLocation" x="-420.28985507246381" y="-84.375"/>
+        </scene>
+        <!--Video Playback View Controller-->
+        <scene sceneID="xA2-4f-YP3">
+            <objects>
+                <viewController id="hVl-nf-6lq" customClass="VideoPlaybackViewController" customModule="CWKSemua" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gAU-o2-a7O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IcG-RK-qmO">
+                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jWJ-bY-QIm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qpx-HB-2Mw"/>
+                    <connections>
+                        <outlet property="videoView" destination="IcG-RK-qmO" id="A4E-t0-qsi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="79d-7t-xBA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="622" y="-84"/>
         </scene>
     </scenes>
     <resources>

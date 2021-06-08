@@ -12,6 +12,7 @@ class VideoCapture: NSObject {
     let captureSession = AVCaptureSession()
     let videoOutput = AVCaptureVideoDataOutput()
     
+    
     override init() {
         super.init()
         
