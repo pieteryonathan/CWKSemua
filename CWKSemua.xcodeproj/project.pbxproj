@@ -22,6 +22,8 @@
 		A7FC63D6266E67A500859CC0 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FC63D5266E67A500859CC0 /* CameraViewController.swift */; };
 		A7FC63D9266E68FB00859CC0 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FC63D8266E68FB00859CC0 /* VideoCapture.swift */; };
 		A7FC6430266EE80D00859CC0 /* VideoPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FC642F266EE80D00859CC0 /* VideoPlaybackViewController.swift */; };
+		C082947A2670A5B000D7D9A2 /* saveVideoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C08294792670A5B000D7D9A2 /* saveVideoStoryboard.storyboard */; };
+		C082947C2670A5BD00D7D9A2 /* saveVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C082947B2670A5BD00D7D9A2 /* saveVideoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		A7FC63D5266E67A500859CC0 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		A7FC63D8266E68FB00859CC0 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 		A7FC642F266EE80D00859CC0 /* VideoPlaybackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaybackViewController.swift; sourceTree = "<group>"; };
+		C08294792670A5B000D7D9A2 /* saveVideoStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = saveVideoStoryboard.storyboard; sourceTree = "<group>"; };
+		C082947B2670A5BD00D7D9A2 /* saveVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saveVideoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 		5BE53E65266E071C0049BBF8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C08294782670A5A100D7D9A2 /* saveVideo */,
 				5BE53E6D266E1D280049BBF8 /* HomePageViewController.swift */,
 				5BE53E6F266E1DF70049BBF8 /* GradientColor.swift */,
 			);
@@ -116,6 +121,15 @@
 			children = (
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		C08294782670A5A100D7D9A2 /* saveVideo */ = {
+			isa = PBXGroup;
+			children = (
+				C08294792670A5B000D7D9A2 /* saveVideoStoryboard.storyboard */,
+				C082947B2670A5BD00D7D9A2 /* saveVideoViewController.swift */,
+			);
+			path = saveVideo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +193,7 @@
 				5B9A7E04266D06A8008053F9 /* Assets.xcassets in Resources */,
 				5BE53E60266DE6D20049BBF8 /* Landscape.storyboard in Resources */,
 				5B9A7DFF266D06A7008053F9 /* Main.storyboard in Resources */,
+				C082947A2670A5B000D7D9A2 /* saveVideoStoryboard.storyboard in Resources */,
 				A7FC63CE266E671100859CC0 /* Camera.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C082947C2670A5BD00D7D9A2 /* saveVideoViewController.swift in Sources */,
 				A7FC63D9266E68FB00859CC0 /* VideoCapture.swift in Sources */,
 				5B9A7DFC266D06A7008053F9 /* ViewController.swift in Sources */,
 				5BE53E70266E1DF70049BBF8 /* GradientColor.swift in Sources */,
