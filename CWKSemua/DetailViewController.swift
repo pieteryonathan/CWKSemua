@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
 
         beginButton.setTwoGradient(width: beginButton.frame.size.width, height: beginButton.frame.size.height)
         // Do any additional setup after loading the view.
+        
     }
     
 
