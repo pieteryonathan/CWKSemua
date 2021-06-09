@@ -13,7 +13,7 @@ class HomePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        frontcourttrainingbutton.setTwoGradient(width: frontcourttrainingbutton.frame.size.width, height: frontcourttrainingbutton.frame.size.height)
+
     }
 
 }
