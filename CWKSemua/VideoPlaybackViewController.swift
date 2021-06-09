@@ -20,6 +20,9 @@ class VideoPlaybackViewController: UIViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
 
+//            let value = UIInterfaceOrientation.landscapeLeft.rawValue
+//            UIDevice.current.setValue(value, forKey: "orientation")
+//
             avPlayerLayer = AVPlayerLayer(player: avPlayer)
             avPlayerLayer.frame = view.bounds
             avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
