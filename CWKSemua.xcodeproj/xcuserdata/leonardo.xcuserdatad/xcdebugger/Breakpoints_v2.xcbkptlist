@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "AC4D054C-75DF-43D6-B71D-910E1E0C6AAD"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B8061623-9A1C-47CF-9791-1A3521C25BD1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CWKSemua/PageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "19165B27-728A-4164-BF62-93402D98C43F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CWKSemua/CameraViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "CameraViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "19165B27-728A-4164-BF62-93402D98C43F - 9dac8601641c2ea5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CWKSemua.CameraViewController.(algorithm in _8E119FCEA8A0A0A9D54336DA31E6F364).getter : CWKSemua.Algorithm"
+                  moduleName = "CWKSemua"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leonardo/Documents/Xcode/CWKSemua/CWKSemua/CameraViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "19165B27-728A-4164-BF62-93402D98C43F - 68989bb6003f46b1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CWKSemua.CameraViewController.(algorithm in _8E119FCEA8A0A0A9D54336DA31E6F364).setter : CWKSemua.Algorithm"
+                  moduleName = "CWKSemua"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leonardo/Documents/Xcode/CWKSemua/CWKSemua/CameraViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "19165B27-728A-4164-BF62-93402D98C43F - 663136676a00f040"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CWKSemua.CameraViewController.(algorithm in _8E119FCEA8A0A0A9D54336DA31E6F364).modify : CWKSemua.Algorithm"
+                  moduleName = "CWKSemua"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leonardo/Documents/Xcode/CWKSemua/CWKSemua/CameraViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "19165B27-728A-4164-BF62-93402D98C43F - 55990c6b255f015a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CWKSemua.CameraViewController.(algorithm in _8E119FCEA8A0A0A9D54336DA31E6F364).modify : CWKSemua.Algorithm with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "CWKSemua"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leonardo/Documents/Xcode/CWKSemua/CWKSemua/CameraViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "8">
+               </Location>
+               <Location
+                  uuid = "19165B27-728A-4164-BF62-93402D98C43F - 3b005b4e1cb7a128"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CWKSemua.CameraViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; CWKSemua.CameraViewController"
+                  moduleName = "CWKSemua"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leonardo/Documents/Xcode/CWKSemua/CWKSemua/CameraViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "832">
+               </Location>
+               <Location
+                  uuid = "19165B27-728A-4164-BF62-93402D98C43F - daec0828be4a036c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CWKSemua.CameraViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CWKSemua.CameraViewController&gt;"
+                  moduleName = "CWKSemua"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leonardo/Documents/Xcode/CWKSemua/CWKSemua/CameraViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "800">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
