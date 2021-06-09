@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gTy-IP-fqZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -73,7 +73,7 @@
                                 <rect key="frame" x="23" y="507" width="344" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -118,100 +118,20 @@
             </objects>
             <point key="canvasLocation" x="3595.3846153846152" y="115.16587677725119"/>
         </scene>
-        <!--PageViewController-->
+        <!--Camera-->
         <scene sceneID="II5-tW-cUt">
             <objects>
-                <viewControllerPlaceholder storyboardName="PageViewController" id="I7S-Gb-AOy" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Camera" id="I7S-Gb-AOy" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="86E-01-Sbq"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opr-pz-Fr0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4299.2307692307695" y="110.18957345971563"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="TjS-tq-lJG">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gTy-IP-fqZ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3Rq-Tp-PQx">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="qHv-Bf-jqv" kind="relationship" relationship="viewControllers" id="JNg-Cf-viA"/>
-                        <segue destination="Btv-od-7Ta" kind="relationship" relationship="viewControllers" id="qbN-T6-apy"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ryo-1B-gLG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="778" y="115"/>
-        </scene>
-        <!--Statistics-->
-        <scene sceneID="BUc-k4-3IP">
-            <objects>
-                <viewController id="Btv-od-7Ta" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Gn6-5O-BTb">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Path 3" translatesAutoresizingMaskIntoConstraints="NO" id="EF3-F6-cj7">
-                                <rect key="frame" x="-14" y="0.0" width="409" height="229"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Statistics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSz-CT-WDB">
-                                <rect key="frame" x="48" y="50" width="144" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ewz-Rs-NiV">
-                                <rect key="frame" x="0.0" y="114" width="390" height="647"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="hQV-Gi-ysy"/>
-                        <color key="backgroundColor" red="0.02442136034" green="0.1853558421" blue="0.21941420440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="hQV-Gi-ysy" firstAttribute="trailing" secondItem="ewz-Rs-NiV" secondAttribute="trailing" id="03k-Of-NCo"/>
-                            <constraint firstItem="ewz-Rs-NiV" firstAttribute="leading" secondItem="hQV-Gi-ysy" secondAttribute="leading" id="ble-jE-Heh"/>
-                            <constraint firstItem="hQV-Gi-ysy" firstAttribute="bottom" secondItem="ewz-Rs-NiV" secondAttribute="bottom" id="l0X-gA-OKK"/>
-                            <constraint firstItem="hQV-Gi-ysy" firstAttribute="bottom" secondItem="ewz-Rs-NiV" secondAttribute="bottom" id="veJ-AA-sxd"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Statistics" image="chart.bar.xaxis" catalog="system" id="uf4-B7-4Jy"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="euz-fK-MAi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="776.92307692307691" y="823.93364928909944"/>
-        </scene>
-        <!--Training-->
-        <scene sceneID="qzA-V4-Jb8">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SfT-C0-bQo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qHv-Bf-jqv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Training" image="star.fill" catalog="system" id="3V9-Ng-9Iu"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="EMT-Cr-b2o">
-                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NiZ-4L-gha"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="1853.8461538461538" y="115.16587677725119"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Path 2" width="390" height="227"/>
-        <image name="Path 3" width="409" height="229"/>
-        <image name="chart.bar.xaxis" catalog="system" width="128" height="98"/>
         <image name="fctimage" width="340" height="413"/>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
