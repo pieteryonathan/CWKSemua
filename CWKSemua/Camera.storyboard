@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="anr-fu-5PG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="anr-fu-5PG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,6 +16,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vlo-Ib-mdw" customClass="PoseImageView" customModule="PoseFinder" customModuleProvider="target">
+                                <rect key="frame" x="19" y="42" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="segmentLineWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="jointRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="jointColor">
+                                        <color key="value" systemColor="systemGreenColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="segmentColor">
+                                        <color key="value" systemColor="systemPinkColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHY-jr-5hh">
                                 <rect key="frame" x="182" y="748" width="50" height="50"/>
                                 <state key="normal" image="recordIcon"/>
@@ -23,8 +41,8 @@
                                     <action selector="onClickCamButton:" destination="anr-fu-5PG" eventType="touchUpInside" id="BX4-u9-JL8"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1m-ZY-KCp">
-                                <rect key="frame" x="0.0" y="108" width="414" height="550"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a1m-ZY-KCp">
+                                <rect key="frame" x="-1" y="341" width="414" height="290"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -33,16 +51,14 @@
                         <constraints>
                             <constraint firstItem="a1m-ZY-KCp" firstAttribute="trailing" secondItem="16u-M7-pf1" secondAttribute="trailing" id="2D3-SB-6dm"/>
                             <constraint firstItem="16u-M7-pf1" firstAttribute="bottom" secondItem="eHY-jr-5hh" secondAttribute="bottom" constant="64" id="COP-fM-jUf"/>
-                            <constraint firstItem="a1m-ZY-KCp" firstAttribute="top" secondItem="16u-M7-pf1" secondAttribute="top" constant="64" id="FDe-eo-fsB"/>
-                            <constraint firstItem="a1m-ZY-KCp" firstAttribute="leading" secondItem="16u-M7-pf1" secondAttribute="leading" id="XTB-xr-J4m"/>
                             <constraint firstItem="eHY-jr-5hh" firstAttribute="top" secondItem="a1m-ZY-KCp" secondAttribute="bottom" constant="90" id="b94-7o-Hfk"/>
                             <constraint firstItem="eHY-jr-5hh" firstAttribute="centerX" secondItem="7mx-P5-hAt" secondAttribute="centerX" id="h1X-er-uxm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="cEx-5D-cp4"/>
                     <connections>
                         <outlet property="camButton" destination="eHY-jr-5hh" id="7vb-FC-grG"/>
                         <outlet property="camPreview" destination="a1m-ZY-KCp" id="Gxl-6n-KIA"/>
+                        <outlet property="previewImageView" destination="vlo-Ib-mdw" id="Bq3-Cv-eS0"/>
                         <segue destination="hVl-nf-6lq" kind="presentation" identifier="showVideo" modalTransitionStyle="crossDissolve" id="Xyt-VK-ZqY"/>
                     </connections>
                 </viewController>
@@ -81,6 +97,12 @@
         <image name="recordIcon" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

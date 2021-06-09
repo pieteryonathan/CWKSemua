@@ -14,11 +14,23 @@ import AVFoundation
 class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
 
 //    @IBOutlet weak var camPreview: UIView!
+//    @IBOutlet private var previewImageView: PoseImageView!
+    @IBOutlet weak var previewImageView: PoseImageView!
+//    @IBOutlet weak var previewImageView: PoseImageView!
     @IBOutlet weak var camPreview: UIView!
     @IBOutlet weak var camButton: UIButton!
     
-//    let cameraButton = UIView()
-
+//    let cameraButton = UIView(
+    private var poseNet: PoseNet!
+    
+    private let videoCapture = VideoCapture()
+    
+    private var currentFrame: CGImage?
+    
+    private var algorithm: Algorithm = .multiple
+    
+    private var poseBuilderConfiguration = PoseBuilderConfiguration()
+    
     let captureSession = AVCaptureSession()
 
     let movieOutput = AVCaptureMovieFileOutput()
@@ -34,9 +46,18 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 //        let value = UIInterfaceOrientation.landscapeLeft.rawValue
 //        UIDevice.current.setValue(value, forKey: "orientation")
         
+        do {
+            poseNet = try PoseNet()
+        } catch {
+            fatalError("Failed to load model. \(error.localizedDescription)")
+        }
+
+        poseNet.delegate = self
+        setupAndBeginCapturingVideoFrames()
+        
         if setupSession() {
-            setupPreview()
-            startSession()
+//            setupPreview()
+//            startSession()
         }
     
 //        cameraButton.isUserInteractionEnabled = true
@@ -53,6 +74,18 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     
     }
 
+    private func setupAndBeginCapturingVideoFrames() {
+        videoCapture.setUpAVCapture { error in
+            if let error = error {
+                print("Failed to setup camera with error \(error)")
+                return
+            }
+
+            self.videoCapture.delegate = self
+
+            self.videoCapture.startCapturing()
+        }
+    }
     @IBAction func onClickCamButton(_ sender: Any) {
         startCapture()
     }
@@ -72,7 +105,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         captureSession.sessionPreset = AVCaptureSession.Preset.high
     
         // Setup Camera
-        let camera = AVCaptureDevice.default(for: AVMediaType.video)!
+        let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .front )!
     
         do {
         
@@ -247,6 +280,45 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     }
 
 }
+
+extension CameraViewController: VideoCaptureDelegate {
+    func videoCapture(_ videoCapture: VideoCapture, didCaptureFrame capturedImage: CGImage?) {
+        guard currentFrame == nil else {
+            return
+        }
+        guard let image = capturedImage else {
+            fatalError("Captured image is null")
+        }
+
+        currentFrame = image
+        poseNet.predict(image)
+    }
+}
+
+// MARK: - PoseNetDelegate
+
+extension CameraViewController: PoseNetDelegate {
+    func poseNet(_ poseNet: PoseNet, didPredict predictions: PoseNetOutput) {
+        defer {
+            // Release `currentFrame` when exiting this method.
+            self.currentFrame = nil
+        }
+
+        guard let currentFrame = currentFrame else {
+            return
+        }
+
+        let poseBuilder = PoseBuilder(output: predictions,
+                                      configuration: poseBuilderConfiguration,
+                                      inputImage: currentFrame)
+
+        let poses = algorithm == .single
+            ? [poseBuilder.pose]
+            : poseBuilder.poses
+
+        previewImageView.show(poses: poses, on: currentFrame)
+    }
+}
 //class CameraViewController: UIViewController{
 //
 //    let videoCapture = VideoCapture()
@@ -278,3 +350,5 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     //        previewLayer.frame = view.frame
     //    }
 //}
+
+
