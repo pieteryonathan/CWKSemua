@@ -50,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="-1038.4615384615383" y="201.89573459715638"/>
         </scene>
-        <!--Main-->
+        <!--Camera-->
         <scene sceneID="bUO-gA-e1n">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="pTr-9Q-R1e" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Camera" id="pTr-9Q-R1e" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y6m-Tj-RrJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-242" y="91"/>
