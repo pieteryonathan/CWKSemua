@@ -43,12 +43,12 @@ class PageViewController: UIViewController, UIScrollViewDelegate {
         
         for i in 0...imageArray.count-1 {
            
-            var imageView = UIImageView()
+            let imageView = UIImageView()
             imageView.contentMode = .scaleAspectFit
             imageView.image = UIImage(named: imageArray[i])
             
-            var imageWidth = scrollView.frame.width
-            var imageHeight = scrollView.frame.height
+            let imageWidth = scrollView.frame.width
+            let imageHeight = scrollView.frame.height
             
             
             imageView.frame = CGRect(x: CGFloat(i)*imageWidth, y: 0, width: imageWidth, height: imageHeight)
@@ -85,6 +85,7 @@ class PageViewController: UIViewController, UIScrollViewDelegate {
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer.frame = camPreview1.bounds
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        previewLayer.connection?.videoOrientation = currentVideoOrientation()
         camPreview1.layer.addSublayer(previewLayer)
     }
     
