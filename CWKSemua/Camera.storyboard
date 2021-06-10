@@ -55,6 +55,16 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rh4-AQ-Dzp">
                                 <rect key="frame" x="-2" y="17" width="847" height="355"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="tSk-xO-OQp">
+                                        <rect key="frame" x="0.0" y="8" width="847" height="364"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kotak gelap" translatesAutoresizingMaskIntoConstraints="NO" id="5dp-Wa-Q63">
+                                        <rect key="frame" x="0.0" y="8" width="855" height="364"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IcG-RK-qmO">
@@ -79,7 +89,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="844" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Sumarry" id="rxT-Jb-Vln">
+                                    <navigationItem title="Summary" id="rxT-Jb-Vln">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="PXI-Ap-eP2">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="sk9-yM-pwD">
                                                 <rect key="frame" x="64" y="1" width="187" height="30"/>
@@ -102,7 +112,6 @@
                             </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jWJ-bY-QIm"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="qpx-HB-2Mw"/>
                     <connections>
@@ -116,6 +125,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background" width="844" height="390"/>
+        <image name="kotak gelap" width="844" height="386"/>
         <image name="play" width="56" height="58"/>
         <image name="recordIcon" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
