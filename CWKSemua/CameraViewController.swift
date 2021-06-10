@@ -31,7 +31,10 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+        
         if setupSession() {
             setupPreview()
             startSession()
