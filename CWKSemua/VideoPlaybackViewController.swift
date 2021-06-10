@@ -7,8 +7,10 @@
 
 import UIKit
 import AVFoundation
+import AVKit
 
 class VideoPlaybackViewController: UIViewController {
+
 
     let avPlayer = AVPlayer()
         var avPlayerLayer: AVPlayerLayer!
@@ -20,6 +22,7 @@ class VideoPlaybackViewController: UIViewController {
         //connect this to your uiview in storyboard
 
     @IBOutlet weak var videoView: UIView!
+    @IBOutlet weak var fullScreen: UIView!
 
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -28,22 +31,24 @@ class VideoPlaybackViewController: UIViewController {
             UIDevice.current.setValue(value, forKey: "orientation")
 
             avPlayerLayer = AVPlayerLayer(player: avPlayer)
-            avPlayerLayer.frame = videoView.bounds
+            avPlayerLayer.frame = fullScreen.bounds
             avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-            videoView.layer.insertSublayer(avPlayerLayer, at: 0)
+            fullScreen.layer.insertSublayer(avPlayerLayer, at: 0)
             videoView.layer.cornerRadius = 30
             view.layoutIfNeeded()
         }
     
     @IBAction func playButton(_ sender: Any) {
-        let decorlayer = CAGradientLayer()
-        decorlayer.cornerRadius = 30
+        videoView.isHidden = false
         let playerItem = AVPlayerItem(url: videoURL as URL)
-        avPlayer.replaceCurrentItem(with: playerItem)
-        avPlayerLayer.cornerRadius = 30
-        avPlayerLayer.insertSublayer(decorlayer, at: 0)
-        avPlayer.play()
+        let player = AVPlayer(url: videoURL as URL)
+        let videoplayer = AVPlayerViewController()
+        videoplayer.player = player
+        self.present(videoplayer, animated: true) {
+            videoplayer.player!.play()
+        
+//        avPlayer.replaceCurrentItem(with: playerItem)
+//        avPlayer.play()
     }
-    
-
+}
 }

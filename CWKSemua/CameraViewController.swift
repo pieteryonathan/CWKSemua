@@ -69,7 +69,6 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     //MARK:- Setup Camera
 
     func setupSession() -> Bool {
-    
         captureSession.sessionPreset = AVCaptureSession.Preset.high
     
         // Setup Camera

@@ -16,12 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a1m-ZY-KCp">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a1m-ZY-KCp">
                                 <rect key="frame" x="45" y="48" width="706" height="321"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHY-jr-5hh">
-                                <rect key="frame" x="776" y="170" width="50" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHY-jr-5hh">
+                                <rect key="frame" x="759" y="170" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="recordIcon"/>
                                 <connections>
                                     <action selector="onClickCamButton:" destination="anr-fu-5PG" eventType="touchUpInside" id="BX4-u9-JL8"/>
@@ -30,14 +32,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="16u-M7-pf1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="a1m-ZY-KCp" firstAttribute="trailing" secondItem="16u-M7-pf1" secondAttribute="trailing" id="2D3-SB-6dm"/>
-                            <constraint firstItem="16u-M7-pf1" firstAttribute="bottom" secondItem="eHY-jr-5hh" secondAttribute="bottom" constant="64" id="COP-fM-jUf"/>
-                            <constraint firstItem="a1m-ZY-KCp" firstAttribute="top" secondItem="16u-M7-pf1" secondAttribute="top" constant="64" id="FDe-eo-fsB"/>
-                            <constraint firstItem="a1m-ZY-KCp" firstAttribute="leading" secondItem="16u-M7-pf1" secondAttribute="leading" id="XTB-xr-J4m"/>
-                            <constraint firstItem="eHY-jr-5hh" firstAttribute="top" secondItem="a1m-ZY-KCp" secondAttribute="bottom" constant="90" id="b94-7o-Hfk"/>
-                            <constraint firstItem="eHY-jr-5hh" firstAttribute="centerX" secondItem="7mx-P5-hAt" secondAttribute="centerX" id="h1X-er-uxm"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cEx-5D-cp4"/>
                     <connections>
@@ -58,6 +52,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rh4-AQ-Dzp">
+                                <rect key="frame" x="-2" y="17" width="847" height="355"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <view contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IcG-RK-qmO">
                                 <rect key="frame" x="227" y="87" width="390" height="216"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -104,6 +103,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="qpx-HB-2Mw"/>
                     <connections>
+                        <outlet property="fullScreen" destination="rh4-AQ-Dzp" id="fau-Hr-70X"/>
                         <outlet property="videoView" destination="IcG-RK-qmO" id="A4E-t0-qsi"/>
                     </connections>
                 </viewController>
