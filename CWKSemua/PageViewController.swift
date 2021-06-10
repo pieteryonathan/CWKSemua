@@ -85,6 +85,7 @@ class PageViewController: UIViewController, UIScrollViewDelegate {
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer.frame = camPreview1.bounds
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        previewLayer.connection?.videoOrientation = currentVideoOrientation()
         camPreview1.layer.addSublayer(previewLayer)
     }
     
