@@ -7,7 +7,7 @@ Implementation details of a facade to interact with the PoseNet model, includes 
 */
 
 import CoreML
-import Vision
+//import Vision
 
 protocol PoseNetDelegate: AnyObject {
     func poseNet(_ poseNet: PoseNet, didPredict predictions: PoseNetOutput)
@@ -27,7 +27,7 @@ class PoseNet {
     /// The PoseNet model's output stride.
     ///
     /// Valid strides are 16 and 8 and define the resolution of the grid output by the model. Smaller strides
-    /// result in higher-resolution grids with an expected increase in accuracy but require more computation. Larger
+    /// result in higher-resolution grids with an expected increase in accuracy but require mon compuation. Larger
     /// strides provide a more coarse grid and typically less accurate but are computationally cheaper in comparison.
     ///
     /// - Note: The output stride is dependent on the chosen model and specified in the metadata. Other variants of the
