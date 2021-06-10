@@ -240,6 +240,8 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         } else {
         
             let videoRecorded = outputURL! as URL
+            
+            print(videoRecorded)
         
             performSegue(withIdentifier: "showVideo", sender: videoRecorded)
         

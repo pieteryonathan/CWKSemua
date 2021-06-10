@@ -20,13 +20,9 @@ class saveVideoViewController: UIViewController, UIImagePickerControllerDelegate
         // Do any additional setup after loading the view.
     }
     
-    
-    
-    @IBAction func playVideoTest(_ sender: Any) {
-        
-       
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+        print("test kepencet")
     }
-    
     
     func imagePickerController(
         _ picker: UIImagePickerController,
