@@ -7,35 +7,76 @@
 
 import UIKit
 import AVFoundation
+import MobileCoreServices
+import AVKit
 
-class VideoPlaybackViewController: UIViewController {
 
+class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDelegate {
+    
     let avPlayer = AVPlayer()
-        var avPlayerLayer: AVPlayerLayer!
+    var avPlayerLayer: AVPlayerLayer!
+    
+    var videoURL: URL!
+    
+    let videoFileName = "/video.mp4"
+    
+    
+    //connect this to your uiview in storyboard
+    
+    @IBOutlet weak var videoView: UIView!
+    @IBOutlet weak var fullScreen: UIView!
+    override func viewDidLoad() {
 
-        var videoURL: URL!
-        //connect this to your uiview in storyboard
-        @IBOutlet weak var videoView: UIView!
-
-        override func viewDidLoad() {
             super.viewDidLoad()
 
-//            let value = UIInterfaceOrientation.landscapeLeft.rawValue
-//            UIDevice.current.setValue(value, forKey: "orientation")
-//
+            let value = UIInterfaceOrientation.landscapeLeft.rawValue
+            UIDevice.current.setValue(value, forKey: "orientation")
+
             avPlayerLayer = AVPlayerLayer(player: avPlayer)
-            avPlayerLayer.frame = view.bounds
+            avPlayerLayer.frame = fullScreen.bounds
             avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-            videoView.layer.insertSublayer(avPlayerLayer, at: 0)
-        
+            fullScreen.layer.insertSublayer(avPlayerLayer, at: 0)
+            videoView.layer.cornerRadius = 30
             view.layoutIfNeeded()
-        
-            let playerItem = AVPlayerItem(url: videoURL as URL)
-            avPlayer.replaceCurrentItem(with: playerItem)
-        
-            avPlayer.play()
         }
     
+    
+    
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+        
+        UISaveVideoAtPathToSavedPhotosAlbum(videoURL.path  , self, #selector(video(_:didFinishSavingWithError:contextInfo:)), nil)
+        
+    }
+    
+    
+    @objc func video(_ videoPath: String, didFinishSavingWithError error: Error?, contextInfo info: AnyObject) {
+        let title = (error == nil) ? "Success" : "Sorry"
+        let message = (error == nil) ? "Video was saved!" : "Video failed to save"
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+  
 
-
+      
+    @IBAction func playButton(_ sender: Any) {
+        videoView.isHidden = false
+        let playerItem = AVPlayerItem(url: videoURL as URL)
+        let player = AVPlayer(url: videoURL as URL)
+        let videoplayer = AVPlayerViewController()
+        videoplayer.player = player
+        self.present(videoplayer, animated: true) {
+            videoplayer.player!.play()
+        
+//        avPlayer.replaceCurrentItem(with: playerItem)
+//        avPlayer.play()
+    }
 }
+}
+
+
+
+
+

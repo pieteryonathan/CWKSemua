@@ -31,8 +31,10 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let value = UIInterfaceOrientation.landscapeLeft.rawValue
-//        UIDevice.current.setValue(value, forKey: "orientation")
+        
+        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+        
         
         if setupSession() {
             setupPreview()
@@ -60,15 +62,14 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     func setupPreview() {
         // Configure previewLayer
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        previewLayer.frame = camPreview.bounds
+        self.previewLayer.frame = self.camPreview.bounds
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        previewLayer.connection?.videoOrientation = currentVideoOrientation()
         camPreview.layer.addSublayer(previewLayer)
     }
 
     //MARK:- Setup Camera
-
     func setupSession() -> Bool {
-    
         captureSession.sessionPreset = AVCaptureSession.Preset.high
     
         // Setup Camera
@@ -239,6 +240,8 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         } else {
         
             let videoRecorded = outputURL! as URL
+            
+            print(videoRecorded)
         
             performSegue(withIdentifier: "showVideo", sender: videoRecorded)
         
