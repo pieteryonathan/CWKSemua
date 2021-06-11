@@ -10,8 +10,6 @@ import AVFoundation
 import MobileCoreServices
 import AVKit
 
-class VideoPlaybackViewController: UIViewController {
-
 
 class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDelegate {
     
@@ -26,20 +24,22 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
     //connect this to your uiview in storyboard
     
     @IBOutlet weak var videoView: UIView!
-    
+    @IBOutlet weak var fullScreen: UIView!
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let value = UIInterfaceOrientation.landscapeLeft.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
-        
-        avPlayerLayer = AVPlayerLayer(player: avPlayer)
-        avPlayerLayer.frame = videoView.bounds
-        avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        videoView.layer.insertSublayer(avPlayerLayer, at: 0)
-        videoView.layer.cornerRadius = 30
-        view.layoutIfNeeded()
-    }
+
+            super.viewDidLoad()
+
+            let value = UIInterfaceOrientation.landscapeLeft.rawValue
+            UIDevice.current.setValue(value, forKey: "orientation")
+
+            avPlayerLayer = AVPlayerLayer(player: avPlayer)
+            avPlayerLayer.frame = fullScreen.bounds
+            avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+            fullScreen.layer.insertSublayer(avPlayerLayer, at: 0)
+            videoView.layer.cornerRadius = 30
+            view.layoutIfNeeded()
+        }
+    
     
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
@@ -58,22 +58,9 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
         present(alert, animated: true, completion: nil)
     }
     
-    @IBOutlet weak var fullScreen: UIView!
+  
 
-        override func viewDidLoad() {
-            super.viewDidLoad()
-
-            let value = UIInterfaceOrientation.landscapeLeft.rawValue
-            UIDevice.current.setValue(value, forKey: "orientation")
-
-            avPlayerLayer = AVPlayerLayer(player: avPlayer)
-            avPlayerLayer.frame = fullScreen.bounds
-            avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-            fullScreen.layer.insertSublayer(avPlayerLayer, at: 0)
-            videoView.layer.cornerRadius = 30
-            view.layoutIfNeeded()
-        }
-    
+      
     @IBAction func playButton(_ sender: Any) {
         videoView.isHidden = false
         let playerItem = AVPlayerItem(url: videoURL as URL)
