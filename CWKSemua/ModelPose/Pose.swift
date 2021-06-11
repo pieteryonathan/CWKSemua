@@ -94,7 +94,6 @@ var drawingScale: CGFloat {
 }
 }
 
-// MARK: - Helper methods
 extension Pose {
 /// Creates an array of connections from the available landmarks.
 mutating func buildConnections() {
@@ -124,10 +123,7 @@ mutating func buildConnections() {
     }
 }
 
-/// Returns a rough estimate of the landmarks' collective area.
-/// - Parameter landmarks: A `Landmark` array.
-/// - Returns: A `CGFloat` that is greater than or equal to `0.0`.
-static func areaEstimateOfLandmarks(_ landmarks: [Landmark]) -> CGFloat {
+    static func areaEstimateOfLandmarks(_ landmarks: [Landmark]) -> CGFloat {
     let xCoordinates = landmarks.map { $0.location.x }
     let yCoordinates = landmarks.map { $0.location.y }
 
@@ -164,9 +160,6 @@ extension Pose {
         /// For example, "left shoulder", "right knee", "nose", and so on.
         let name: JointName
 
-        /// The location of the landmark in normalized coordinates.
-        ///
-        /// When calling `drawToContext()`, use a transform to apply a scale
         /// that's appropriate for the graphics context.
         let location: CGPoint
 
@@ -183,10 +176,6 @@ extension Pose {
             location = point.location
         }
 
-        /// Draws a circle at the landmark's location after transformation.
-        /// - Parameters:
-        ///   - context: A context the method uses to draw the landmark.
-        ///   - transform: A transform that modifies the point locations.
         func drawToContext(_ context: CGContext,
                            applying transform: CGAffineTransform? = nil,
                            at scale: CGFloat = 1.0) {
@@ -219,12 +208,8 @@ extension Pose {
         static let width: CGFloat = 12.0
 
         /// The gradient colors the connection uses to draw its line.
-        static let colors = [UIColor.systemGreen.cgColor,
+        static let colors = [UIColor.systemYellow.cgColor,
                              UIColor.systemYellow.cgColor,
-                             UIColor.systemOrange.cgColor,
-                             UIColor.systemRed.cgColor,
-                             UIColor.systemPurple.cgColor,
-                             UIColor.systemBlue.cgColor
         ] as CFArray
 
         static let gradientColorSpace = CGColorSpace(name: CGColorSpace.sRGB)
@@ -240,20 +225,8 @@ extension Pose {
         private let point2: CGPoint
 
         /// Creates a connection from two points.
-        ///
-        /// The order of the points isn't important.
-        /// - Parameters:
-        ///   - one: The location for one end of the connection.
-        ///   - two: The location for the other end of the connection.
         init(_ one: CGPoint, _ two: CGPoint) { point1 = one; point2 = two }
 
-        /// Draws a line from the connection's first endpoint to its other
-        /// endpoint.
-        /// - Parameters:
-        ///   - context: The Core Graphics context to draw to.
-        ///   - transform: An affine transform that scales and translate each
-        ///   endpoint.
-        ///   - scale: The scale that adjusts the line's thickness
         func drawToContext(_ context: CGContext,
                            applying transform: CGAffineTransform? = nil,
                            at scale: CGFloat = 1.0) {
@@ -275,6 +248,8 @@ extension Pose {
             context.addLine(to: end)
             context.replacePathWithStrokedPath()
             context.clip()
+//            context.setStrokeColor(#colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1))
+//            context.setFillColor(#colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1))
             context.drawLinearGradient(Connection.gradient,
                                        start: start,
                                        end: end,
@@ -312,16 +287,8 @@ extension Pose {
 }
 
 extension Pose {
-    /// A multiarray with the same dimensions as human body pose
-    /// that sets each element to zero.
-    ///
-    /// This instance has the same shape as the multiarray from a
-    /// `VNHumanBodyPoseObservation` instance.
-    /// - Tag: emptyPoseMultiArray
     static let emptyPoseMultiArray = zeroedMultiArrayWithShape([1, 3, 18])
 
-    /// Creates a multiarray and assigns zero to every element.
-    /// - Returns: An `MLMultiArray`.
     private static func zeroedMultiArrayWithShape(_ shape: [Int]) -> MLMultiArray {
         // Create the multiarray.
         guard let array = try? MLMultiArray(shape: shape as [NSNumber],

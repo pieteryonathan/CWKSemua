@@ -27,7 +27,7 @@ class VideoCapture: NSObject {
         didSet { createVideoFramePublisher() }
     }
     
-    var orientation = AVCaptureVideoOrientation.portrait {
+    var orientation = AVCaptureVideoOrientation.landscapeRight {
         didSet { createVideoFramePublisher() }
     }
     
@@ -37,15 +37,10 @@ class VideoCapture: NSObject {
                                           qos: .userInitiated)
     var videoStabilizationEnabled = false
     
-    /// A Boolean that indicates whether the video capture minimize camera shake.
-//    private var videoStabilizationEnabled = false
-
-    /// Changes the camera selection between the front- and back-facing cameras.
     func toggleCameraSelection() {
         cameraPosition = cameraPosition == .back ? .front : .back
     }
 
-    /// Adjusts the video orientation to match the device's orientation.
     func updateDeviceOrientation() {
         let currentPhysicalOrientation = UIDevice.current.orientation
 
@@ -80,14 +75,11 @@ extension VideoCapture: AVCaptureVideoDataOutputSampleBufferDelegate {
                        didOutput frame: Frame,
                        from connection: AVCaptureConnection) {
 
-        // Forward the frame through the publisher.
         framePublisher?.send(frame)
     }
 }
 
     extension VideoCapture {
-        /// Creates a video frame publisher by starting or reconfiguring the
-        /// video capture session.
         /// - Tag: createVideoFramePublisher
         private func createVideoFramePublisher() {
             // (Re)configure the capture session.
@@ -109,8 +101,6 @@ extension VideoCapture: AVCaptureVideoDataOutputSampleBufferDelegate {
             delegate.videoCapture(self, didCreate: genericFramePublisher)
         }
 
-        /// Configures or reconfigures the session to the new camera settings.
-        /// - Tag: configureCaptureSession
         private func configureCaptureSession() -> AVCaptureVideoDataOutput? {
             disableCaptureSession()
 
@@ -118,17 +108,13 @@ extension VideoCapture: AVCaptureVideoDataOutputSampleBufferDelegate {
 //                // Leave the camera disabled.
 //                return nil
 //            }
-
-            // (Re)start the capture session after this method returns.
+            
             defer { enableCaptureSession() }
 
-            // Tell the capture session to start configuration.
             captureSession.beginConfiguration()
 
-            // Finalize the configuration after this method returns.
             defer { captureSession.commitConfiguration() }
 
-            // Set the video camera to run at the action classifier's frame rate.
             let modelFrameRate = 30.0
 
             let input = AVCaptureDeviceInput.createCameraInput(position: cameraPosition,
@@ -140,15 +126,12 @@ extension VideoCapture: AVCaptureVideoDataOutputSampleBufferDelegate {
             return success ? output : nil
         }
 
-        /// Sets the connection's orientation, image mirroring, and video stabilization.
-        /// - Tag: configureCaptureConnection
         private func configureCaptureConnection(_ input: AVCaptureDeviceInput?,
                                                 _ output: AVCaptureVideoDataOutput?) -> Bool {
 
             guard let input = input else { return false }
             guard let output = output else { return false }
 
-            // Clear inputs and outputs from the capture session.
             captureSession.inputs.forEach(captureSession.removeInput)
             captureSession.outputs.forEach(captureSession.removeOutput)
 
@@ -162,25 +145,21 @@ extension VideoCapture: AVCaptureVideoDataOutputSampleBufferDelegate {
                 return false
             }
 
-            // Add the input and output to the capture session.
             captureSession.addInput(input)
             captureSession.addOutput(output)
 
-            // This capture session must only have one connection.
             guard captureSession.connections.count == 1 else {
                 let count = captureSession.connections.count
                 print("The capture session has \(count) connections instead of 1.")
                 return false
             }
 
-            // Configure the first, and only, connection.
             guard let connection = captureSession.connections.first else {
                 print("Getting the first/only capture-session connection shouldn't fail.")
                 return false
             }
 
             if connection.isVideoOrientationSupported {
-                // Set the video capture's orientation to match that of the device.
                 connection.videoOrientation = orientation
             }
 
@@ -196,7 +175,6 @@ extension VideoCapture: AVCaptureVideoDataOutputSampleBufferDelegate {
                 }
             }
 
-            // Discard newer frames if the app is busy with an earlier frame.
             output.alwaysDiscardsLateVideoFrames = true
 
             return true

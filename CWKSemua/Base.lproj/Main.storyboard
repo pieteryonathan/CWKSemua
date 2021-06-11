@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="3595.3846153846152" y="115.16587677725119"/>
         </scene>
-        <!--Camera-->
+        <!--PageViewController-->
         <scene sceneID="II5-tW-cUt">
             <objects>
-                <viewControllerPlaceholder storyboardName="Camera" id="I7S-Gb-AOy" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="PageViewController" id="I7S-Gb-AOy" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="86E-01-Sbq"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opr-pz-Fr0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
