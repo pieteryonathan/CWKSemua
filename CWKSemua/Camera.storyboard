@@ -19,6 +19,26 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a1m-ZY-KCp">
                                 <rect key="frame" x="45" y="48" width="706" height="321"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rej-JC-6gc">
+                                        <rect key="frame" x="233" y="8" width="240" height="305"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DE6-7P-Ltz">
+                                        <rect key="frame" x="332" y="42" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjh-7b-Fd8">
+                                        <rect key="frame" x="332" y="71" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHY-jr-5hh">
@@ -26,7 +46,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="recordIcon"/>
                                 <connections>
-                                    <action selector="onClickCamButton:" destination="anr-fu-5PG" eventType="touchUpInside" id="BX4-u9-JL8"/>
+                                    <segue destination="hVl-nf-6lq" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="6xx-b8-rvC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -35,9 +55,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="cEx-5D-cp4"/>
                     <connections>
+                        <outlet property="actionLabel" destination="DE6-7P-Ltz" id="65z-zn-DHc"/>
                         <outlet property="camButton" destination="eHY-jr-5hh" id="7vb-FC-grG"/>
                         <outlet property="camPreview" destination="a1m-ZY-KCp" id="Gxl-6n-KIA"/>
-                        <segue destination="hVl-nf-6lq" kind="presentation" identifier="showVideo" modalTransitionStyle="crossDissolve" id="Xyt-VK-ZqY"/>
+                        <outlet property="confidenceLabel" destination="cjh-7b-Fd8" id="eIe-cS-3wv"/>
+                        <outlet property="imageView" destination="Rej-JC-6gc" id="3qK-w9-kKF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDA-fW-dmk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -92,7 +114,7 @@
                                     <navigationItem title="Summary" id="rxT-Jb-Vln">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="PXI-Ap-eP2">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="sk9-yM-pwD">
-                                                <rect key="frame" x="64" y="1" width="187" height="30"/>
+                                                <rect key="frame" x="60" y="1" width="187" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Cancel"/>
                                                 <connections>
@@ -102,7 +124,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="qTM-Gb-4kg">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="5mZ-tQ-sm7">
-                                                <rect key="frame" x="593" y="1" width="187" height="30"/>
+                                                <rect key="frame" x="597" y="1" width="187" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Save"/>
                                                 <connections>
