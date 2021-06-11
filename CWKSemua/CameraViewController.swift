@@ -19,6 +19,10 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     
 //    let cameraButton = UIView()
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var actionLabel: UILabel!
+    @IBOutlet weak var confidenceLabel: UILabel!
+    
     let captureSession = AVCaptureSession()
 
     let movieOutput = AVCaptureMovieFileOutput()
@@ -28,18 +32,29 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     var activeInput: AVCaptureDeviceInput!
 
     var outputURL: URL!
-
+    
+    
+    var videoCapture: VideoCapture!
+    var videoProcessingChain: VideoProcessingChain!
+    var actionFrameCounts = [String: Int]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let value = UIInterfaceOrientation.landscapeLeft.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
-        
-        
-        if setupSession() {
-            setupPreview()
-            startSession()
-        }
+//        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+//        UIDevice.current.setValue(value, forKey: "orientation")
+        videoProcessingChain = VideoProcessingChain()
+        videoProcessingChain.delegate = self
+
+        // Begin receiving frames from the video capture.
+        videoCapture = VideoCapture()
+        videoCapture.delegate = self
+
+        updateUILabelsWithPrediction(.startingPrediction)
+//        if setupSession() {
+//            setupPreview()
+//            startSession()
+//        }
     
 //        cameraButton.isUserInteractionEnabled = true
 //
@@ -54,6 +69,20 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 //        camPreview.addSubview(cameraButton)
     
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        // Update the device's orientation.
+        videoCapture.updateDeviceOrientation()
+    }
+
+    /// Notifies the video capture when the device rotates to a new orientation.
+    override func viewWillTransition(to size: CGSize,
+                                     with coordinator: UIViewControllerTransitionCoordinator) {
+        // Update the the camera's orientation to match the device's.
+        videoCapture.updateDeviceOrientation()
+    }
 
     @IBAction func onClickCamButton(_ sender: Any) {
         startCapture()
@@ -66,10 +95,15 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         previewLayer.connection?.videoOrientation = currentVideoOrientation()
         camPreview.layer.addSublayer(previewLayer)
+        camPreview.addSubview(imageView)
+        camPreview.addSubview(actionLabel)
+        camPreview.addSubview(confidenceLabel)
     }
 
     //MARK:- Setup Camera
+
     func setupSession() -> Bool {
+    
         captureSession.sessionPreset = AVCaptureSession.Preset.high
     
         // Setup Camera
@@ -250,6 +284,87 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     }
 
 }
+
+
+extension CameraViewController {
+    private func addFrameCount(_ frameCount: Int, to actionLabel: String) {
+        let totalFrames = (actionFrameCounts[actionLabel] ?? 0) + frameCount
+
+        actionFrameCounts[actionLabel] = totalFrames
+    }
+    
+    private func updateUILabelsWithPrediction(_ prediction: ActionPrediction) {
+        DispatchQueue.main.async { self.actionLabel.text = prediction.label }
+
+        let confidenceString = prediction.confidenceString ?? "Observing..."
+        DispatchQueue.main.async { self.confidenceLabel.text = confidenceString }
+    }
+    
+    private func drawPoses(_ poses: [Pose]?, onto frame: CGImage) {
+        let renderFormat = UIGraphicsImageRendererFormat()
+        renderFormat.scale = 1.0
+
+        let frameSize = CGSize(width: frame.width, height: frame.height)
+        let poseRenderer = UIGraphicsImageRenderer(size: frameSize,
+                                                   format: renderFormat)
+
+        let frameWithPosesRendering = poseRenderer.image { rendererContext in
+            let cgContext = rendererContext.cgContext
+            let inverse = cgContext.ctm.inverted()
+
+            cgContext.concatenate(inverse)
+
+            let imageRectangle = CGRect(origin: .zero, size: frameSize)
+            cgContext.draw(frame, in: imageRectangle)
+//            print("frame:",frame)\
+            let pointTransform = CGAffineTransform(scaleX: frameSize.width,
+                                                   y: frameSize.height)
+
+            guard let poses = poses else { return }
+
+            for pose in poses {
+                pose.drawWireframeToContext(cgContext, applying: pointTransform)
+            }
+        }
+
+        DispatchQueue.main.async { self.imageView.image = frameWithPosesRendering }
+    }
+}
+
+extension CameraViewController: VideoCaptureDelegate {
+    func videoCapture(_ videoCapture: VideoCapture,
+                      didCreate framePublisher: FramePublisher) {
+        updateUILabelsWithPrediction(.startingPrediction)
+        
+        videoProcessingChain.upstreamFramePublisher = framePublisher
+    }
+}
+
+extension CameraViewController: VideoProcessingChainDelegate {
+    /// - Tag: detectedAction
+    func videoProcessingChain(_ chain: VideoProcessingChain,
+                              didPredict actionPrediction: ActionPrediction,
+                              for frameCount: Int) {
+
+        if actionPrediction.isModelLabel {
+            addFrameCount(frameCount, to: actionPrediction.label)
+        }
+
+        updateUILabelsWithPrediction(actionPrediction)
+    }
+
+    func videoProcessingChain(_ chain: VideoProcessingChain,
+                              didDetect poses: [Pose]?,
+                              in frame: CGImage) {
+        // Render the poses on a different queue than pose publisher.
+        DispatchQueue.global(qos: .userInteractive).async {
+            // Draw the poses onto the frame.
+            self.drawPoses(poses, onto: frame)
+        }
+    }
+}
+
+
 //class CameraViewController: UIViewController{
 //
 //    let videoCapture = VideoCapture()
