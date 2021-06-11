@@ -29,7 +29,7 @@
 		A7EA82D22672E82B0032CAA7 /* FootworkClassifierPredict.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA82D12672E82B0032CAA7 /* FootworkClassifierPredict.swift */; };
 		A7EA82D52672EB250032CAA7 /* FootworkPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA82D42672EB250032CAA7 /* FootworkPrediction.swift */; };
 		A7EA82D92672EFDB0032CAA7 /* VideoProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA82D82672EFDB0032CAA7 /* VideoProcessing.swift */; };
-		A7FC63CE266E671100859CC0 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7FC63CD266E671100859CC0 /* Camera.storyboard */; };
+		A7FC63CE266E671100859CC0 /* Camera2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7FC63CD266E671100859CC0 /* Camera2.storyboard */; };
 		A7FC63D6266E67A500859CC0 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FC63D5266E67A500859CC0 /* CameraViewController.swift */; };
 		A7FC63D9266E68FB00859CC0 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FC63D8266E68FB00859CC0 /* VideoCapture.swift */; };
 		A7FC6430266EE80D00859CC0 /* VideoPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FC642F266EE80D00859CC0 /* VideoPlaybackViewController.swift */; };
@@ -60,7 +60,7 @@
 		A7EA82D12672E82B0032CAA7 /* FootworkClassifierPredict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootworkClassifierPredict.swift; sourceTree = "<group>"; };
 		A7EA82D42672EB250032CAA7 /* FootworkPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootworkPrediction.swift; sourceTree = "<group>"; };
 		A7EA82D82672EFDB0032CAA7 /* VideoProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoProcessing.swift; sourceTree = "<group>"; };
-		A7FC63CD266E671100859CC0 /* Camera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
+		A7FC63CD266E671100859CC0 /* Camera2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Camera2.storyboard; sourceTree = "<group>"; };
 		A7FC63D5266E67A500859CC0 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		A7FC63D8266E68FB00859CC0 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 		A7FC642F266EE80D00859CC0 /* VideoPlaybackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaybackViewController.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 				A7EA82B92672DF0E0032CAA7 /* Camera */,
 				A7FC642F266EE80D00859CC0 /* VideoPlaybackViewController.swift */,
 				A7D088F7266F42370044AB95 /* DetailViewController.swift */,
-				A7FC63CD266E671100859CC0 /* Camera.storyboard */,
+				A7FC63CD266E671100859CC0 /* Camera2.storyboard */,
 				5B9A7DFD266D06A7008053F9 /* Main.storyboard */,
 				5BBFF36C266F5ACF0003EBEB /* PageViewController.storyboard */,
 				5BBFF36E266F5BE10003EBEB /* PageViewController.swift */,
@@ -245,7 +245,7 @@
 				5BE53E60266DE6D20049BBF8 /* Landscape.storyboard in Resources */,
 				5B9A7DFF266D06A7008053F9 /* Main.storyboard in Resources */,
 				5BBFF36D266F5ACF0003EBEB /* PageViewController.storyboard in Resources */,
-				A7FC63CE266E671100859CC0 /* Camera.storyboard in Resources */,
+				A7FC63CE266E671100859CC0 /* Camera2.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

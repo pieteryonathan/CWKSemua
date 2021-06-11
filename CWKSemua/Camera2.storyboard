@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Camera View Controller-->
+        <!--View Controller-->
         <scene sceneID="bmE-Y3-Den">
             <objects>
-                <viewController id="anr-fu-5PG" customClass="CameraViewController" customModule="CWKSemua" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="anr-fu-5PG" customClass="ViewController" customModule="CWKSemua" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7mx-P5-hAt">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="-420.53571428571428" y="-85.507246376811594"/>
         </scene>
-        <!--Video Playback View Controller-->
+        <!--View Controller-->
         <scene sceneID="xA2-4f-YP3">
             <objects>
-                <viewController id="hVl-nf-6lq" customClass="VideoPlaybackViewController" customModule="CWKSemua" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hVl-nf-6lq" customClass="ViewController" customModule="CWKSemua" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gAU-o2-a7O">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
