@@ -84,9 +84,9 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         videoCapture.updateDeviceOrientation()
     }
 
-    @IBAction func onClickCamButton(_ sender: Any) {
-        startCapture()
-    }
+//    @IBAction func onClickCamButton(_ sender: Any) {
+////        startCapture()
+//    }
     
     func setupPreview() {
         // Configure previewLayer
@@ -207,13 +207,13 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         return nil
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
-        let vc = segue.destination as! VideoPlaybackViewController
-    
-        vc.videoURL = sender as? URL
-    
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        let vc = segue.destination as! VideoPlaybackViewController
+//
+//        vc.videoURL = sender as? URL
+//
+//    }
 
     func startRecording() {
     
