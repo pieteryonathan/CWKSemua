@@ -37,6 +37,7 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
             avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
             fullScreen.layer.insertSublayer(avPlayerLayer, at: 0)
             videoView.layer.cornerRadius = 30
+        videoView.setTwoGradient(width: videoView.frame.size.width, height: videoView.frame.size.height)
             view.layoutIfNeeded()
         }
     
