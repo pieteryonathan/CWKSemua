@@ -31,6 +31,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     
     var outputURL: URL!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -261,6 +262,8 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         
     }
     
+    
+    
 }
 //class CameraViewController: UIViewController{
 //
@@ -295,33 +298,37 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 //}
 extension CameraViewController: UIImagePickerControllerDelegate{
     
+    
+    
     func startRecordingReplayKit(){
         
-        guard recorder.isAvailable else{
-            print("Recording are unavailable")
-            return
-        }
-        
-        recorder.startRecording{ [unowned self] (error) in
-            
-            guard error == nil else {
-                print("There was an error starting the recording.")
+        recorder.startRecording { (error) in
+            guard error == nil else{
+                print("failed to recording")
                 return
             }
-            
-            print("Started Recording Successfully")
             self.recordEngga = true
-            
         }
-        
         
         
     }
     
     func stopRecordingReplayKit(){
         
-        recorder.stopRecording(withOutput: outputURL, completionHandler: nil)
-        print("masuk ke function stopRecording")
-       // print(outputURL)
+        outputURL = tempURL()
+        recorder.stopRecording(withOutput: outputURL) { (error) in
+            guard error == nil else{
+                print("Failed to save ")
+                return
+            }
+            print(self.outputURL)
+           
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "showVideo", sender: self.outputURL)
+            }
+           
+            
+        }
     }
+    
 }
