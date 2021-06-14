@@ -46,16 +46,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="recordIcon"/>
                                 <connections>
-                                    <segue destination="hVl-nf-6lq" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="6xx-b8-rvC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEl-mE-sOF">
-                                <rect key="frame" x="710" y="251" width="95" height="99"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.14502903819999999" green="0.27844971419999998" blue="0.30583974720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="testReplayKit:" destination="anr-fu-5PG" eventType="touchUpInside" id="ht7-FF-8cN"/>
+                                    <action selector="buttonOnClick:" destination="anr-fu-5PG" eventType="touchUpInside" id="iA9-Cw-3wJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -69,6 +60,7 @@
                         <outlet property="camPreview" destination="a1m-ZY-KCp" id="Gxl-6n-KIA"/>
                         <outlet property="confidenceLabel" destination="cjh-7b-Fd8" id="eIe-cS-3wv"/>
                         <outlet property="imageView" destination="Rej-JC-6gc" id="3qK-w9-kKF"/>
+                        <segue destination="hVl-nf-6lq" kind="show" identifier="showVideo" id="O1f-S1-FBM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDA-fW-dmk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -123,7 +115,7 @@
                                     <navigationItem title="Summary" id="rxT-Jb-Vln">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="PXI-Ap-eP2">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="sk9-yM-pwD">
-                                                <rect key="frame" x="60" y="1" width="187" height="30"/>
+                                                <rect key="frame" x="64" y="1" width="187" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Cancel"/>
                                                 <connections>
@@ -133,7 +125,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="qTM-Gb-4kg">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="5mZ-tQ-sm7">
-                                                <rect key="frame" x="597" y="1" width="187" height="30"/>
+                                                <rect key="frame" x="593" y="1" width="187" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Save"/>
                                                 <connections>

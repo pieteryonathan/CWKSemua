@@ -23,6 +23,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     @IBOutlet weak var actionLabel: UILabel!
     @IBOutlet weak var confidenceLabel: UILabel!
     //    let cameraButton = UIView()
+    
     let recorder = RPScreenRecorder.shared()
     var recordEngga = false
     
@@ -86,20 +87,18 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         // Update the the camera's orientation to match the device's.
         videoCapture.updateDeviceOrientation()
     }
-
-//    @IBAction func onClickCamButton(_ sender: Any) {
-////        startCapture()
-//    }
     
+    @IBAction func buttonOnClick(_ sender: UIButton) {
     
-    @IBAction func testReplayKit(_ sender: UIButton) {
         if !recordEngga {
             startRecordingReplayKit()
         }
         else{
             stopRecordingReplayKit()
         }
+        print("button pressed")
     }
+    
     
     func setupPreview() {
         // Configure previewLayer
@@ -412,7 +411,6 @@ extension CameraViewController: VideoProcessingChainDelegate {
 //    }
 //}
 extension CameraViewController: UIImagePickerControllerDelegate{
-    
     
     
     func startRecordingReplayKit(){
