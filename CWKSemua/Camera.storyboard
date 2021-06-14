@@ -49,6 +49,15 @@
                                     <segue destination="hVl-nf-6lq" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="6xx-b8-rvC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEl-mE-sOF">
+                                <rect key="frame" x="710" y="251" width="95" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.14502903819999999" green="0.27844971419999998" blue="0.30583974720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="testReplayKit:" destination="anr-fu-5PG" eventType="touchUpInside" id="ht7-FF-8cN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="16u-M7-pf1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
