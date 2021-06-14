@@ -38,20 +38,20 @@ class PageViewController: UIViewController, UIScrollViewDelegate {
         
         scrollView.delegate = self
         let imageArray = ["Page1.1","Page2.1"]
-        scrollView.contentSize.width = CGFloat(imageArray.count)*scrollView.frame.width
+        scrollView.contentSize.width = CGFloat(imageArray.count)*scrollView.frame.width - 90
         scrollView.isPagingEnabled = true
         
         for i in 0...imageArray.count-1 {
            
             let imageView = UIImageView()
-            imageView.contentMode = .scaleAspectFit
+            imageView.contentMode = .scaleToFill
             imageView.image = UIImage(named: imageArray[i])
             
             let imageWidth = scrollView.frame.width
             let imageHeight = scrollView.frame.height
             
             
-            imageView.frame = CGRect(x: CGFloat(i)*imageWidth, y: 0, width: imageWidth, height: imageHeight)
+            imageView.frame = CGRect(x: CGFloat(i)*imageWidth - 48, y: 0, width: imageWidth, height: imageHeight)
             scrollView.addSubview(imageView)
 
             
@@ -79,7 +79,7 @@ class PageViewController: UIViewController, UIScrollViewDelegate {
         }
         pageControl1.currentPage = Int(page)
 }
-
+    
     func setupPreview() {
         // Configure previewLayer
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
