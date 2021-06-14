@@ -49,6 +49,15 @@
                                     <action selector="buttonOnClick:" destination="anr-fu-5PG" eventType="touchUpInside" id="iA9-Cw-3wJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mC0-dk-3wG" userLabel="StopButton">
+                                <rect key="frame" x="759" y="170" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" image="rectangle"/>
+                                <connections>
+                                    <action selector="buttonOnClick:" destination="anr-fu-5PG" eventType="touchUpInside" id="PvS-0C-2Dg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="16u-M7-pf1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -56,6 +65,7 @@
                     <navigationItem key="navigationItem" id="cEx-5D-cp4"/>
                     <connections>
                         <outlet property="actionLabel" destination="DE6-7P-Ltz" id="65z-zn-DHc"/>
+                        <outlet property="buttonstoprecord" destination="mC0-dk-3wG" id="BhL-xr-bQb"/>
                         <outlet property="camButton" destination="eHY-jr-5hh" id="7vb-FC-grG"/>
                         <outlet property="camPreview" destination="a1m-ZY-KCp" id="Gxl-6n-KIA"/>
                         <outlet property="confidenceLabel" destination="cjh-7b-Fd8" id="eIe-cS-3wv"/>
@@ -160,6 +170,7 @@
         <image name="kotak gelap" width="844" height="386"/>
         <image name="play" width="56" height="58"/>
         <image name="recordIcon" width="50" height="50"/>
+        <image name="rectangle" width="100" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

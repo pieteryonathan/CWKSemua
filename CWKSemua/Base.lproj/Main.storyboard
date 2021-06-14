@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gTy-IP-fqZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gTy-IP-fqZ">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -139,7 +139,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="TjS-tq-lJG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ryo-1B-gLG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gTy-IP-fqZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3Rq-Tp-PQx">
@@ -152,6 +151,7 @@
                         <segue destination="Btv-od-7Ta" kind="relationship" relationship="viewControllers" id="qbN-T6-apy"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ryo-1B-gLG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="778" y="115"/>
         </scene>
@@ -197,7 +197,6 @@
         <!--Training-->
         <scene sceneID="qzA-V4-Jb8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SfT-C0-bQo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qHv-Bf-jqv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Training" image="star.fill" catalog="system" id="3V9-Ng-9Iu"/>
                     <toolbarItems/>
@@ -211,6 +210,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NiZ-4L-gha"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SfT-C0-bQo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1845" y="115"/>
         </scene>
