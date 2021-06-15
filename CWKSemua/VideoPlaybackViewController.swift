@@ -9,6 +9,7 @@ import UIKit
 import AVFoundation
 import MobileCoreServices
 import AVKit
+import CoreData
 
 
 class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDelegate {
@@ -39,6 +40,8 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
             videoView.layer.cornerRadius = 30
         videoView.setTwoGradient(width: videoView.frame.size.width, height: videoView.frame.size.height)
             view.layoutIfNeeded()
+        
+        
         }
     
     
@@ -47,6 +50,27 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
         
         UISaveVideoAtPathToSavedPhotosAlbum(videoURL.path  , self, #selector(video(_:didFinishSavingWithError:contextInfo:)), nil)
         
+        //MARK: Core data save
+        
+        
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "History", in: context)
+        let newHistory = History(entity: entity!, insertInto: context)
+        
+        newHistory.videoId = historys.count as NSNumber
+        newHistory.videoLink = videoURL.path
+        newHistory.videoDate = Date()
+        
+        do {
+            historys.append(newHistory)
+            try context.save()
+            navigationController?.popViewController(animated: true)
+        } catch {
+            print("error")
+        }
+        return
     }
     
     
@@ -60,8 +84,6 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
     }
     
   
-
-      
     @IBAction func playButton(_ sender: Any) {
         videoView.isHidden = false
         let playerItem = AVPlayerItem(url: videoURL as URL)
