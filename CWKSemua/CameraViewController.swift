@@ -441,7 +441,6 @@ extension CameraViewController: UIImagePickerControllerDelegate{
                 return
             }
             print(self.outputURL)
-           
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "showVideo", sender: self.outputURL)
             }
