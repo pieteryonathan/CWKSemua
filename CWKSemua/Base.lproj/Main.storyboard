@@ -224,7 +224,7 @@
                                                                 <constraint firstAttribute="height" constant="14" id="htM-cw-PZ0"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
-                                                            <color key="textColor" red="0.021498445420000001" green="0.14853107930000001" blue="0.17647519710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klr-t0-mqh">
@@ -234,7 +234,7 @@
                                                                 <constraint firstAttribute="width" constant="133" id="u7D-VW-wA8"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                            <color key="textColor" red="0.021498445420000001" green="0.14853107930000001" blue="0.17647519710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIm-pl-gdW">
@@ -275,6 +275,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="171" height="193"/>
                                         <connections>
+                                            <outlet property="dateLabel" destination="sC5-I0-qBa" id="izO-dR-4IC"/>
                                             <outlet property="historyVideoView" destination="LG6-bT-IkP" id="VWf-Eu-kAx"/>
                                         </connections>
                                     </collectionViewCell>

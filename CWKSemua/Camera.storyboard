@@ -118,9 +118,6 @@
                                                 <rect key="frame" x="64" y="1" width="187" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Cancel"/>
-                                                <connections>
-                                                    <segue destination="anr-fu-5PG" kind="show" id="q25-fA-Ql0"/>
-                                                </connections>
                                             </button>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="qTM-Gb-4kg">

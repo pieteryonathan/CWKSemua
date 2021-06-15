@@ -10,7 +10,6 @@ import CoreData
 import AVFoundation
 import AVKit
 
-var historys = [History]()
 
 class HistoryViewController: UIViewController {
 
@@ -20,8 +19,9 @@ class HistoryViewController: UIViewController {
     
     let avPlayer = AVPlayer()
     var avPlayerLayer: AVPlayerLayer!
+    var historys = [History]()
     
-    var videoURL: URL!
+//    var videoURL: URL!
     
     var firstLoad = true
     
@@ -58,10 +58,17 @@ class HistoryViewController: UIViewController {
         historyCollection?.collectionViewLayout = UICollectionViewLayout()
     }
     
+    func dateToString(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d MMM y, HH:mm"
+        return dateFormatter.string(from: date)
+    }
+    
 
 
 //    @IBAction func historyPlayButton(_ sender: UIButton) {
 //
+//        let url = URL(fileURLWithPath: historys[])
 //        let player = AVPlayer(url: videoURL as URL)
 //        let videoplayer = AVPlayerViewController()
 //        videoplayer.player = player
@@ -81,15 +88,30 @@ extension HistoryViewController: UICollectionViewDelegate, UICollectionViewDataS
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "historyDetailCell", for: indexPath) as! HistoryCollectionViewCell
         let thisHistory: History!
         thisHistory = historys[indexPath.row]
+        
+        cell.dateLabel.text = dateToString(date: thisHistory.videoDate!)
+        
       
-//        let fileURL = URL(fileURLWithPath: videoURL.path)
-//        cell.videoURL = thisHistory.videoLink
+        
         
         return cell
     }
     
+  
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let url = URL(fileURLWithPath: historys[indexPath.row].videoLink!)
+        let player = AVPlayer(url: url)
+        let videoplayer = AVPlayerViewController()
+        videoplayer.player = player
+        self.present(videoplayer, animated: true) {
+            videoplayer.player!.play()
+        }
+    }
     
 }
+    
+    
+
 
 extension HistoryViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

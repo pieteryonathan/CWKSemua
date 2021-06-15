@@ -18,7 +18,7 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
     var avPlayerLayer: AVPlayerLayer!
     
     var videoURL: URL!
-    
+    var historys = [History]()
     let videoFileName = "/video.mp4"
     
     
@@ -60,7 +60,7 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
         let newHistory = History(entity: entity!, insertInto: context)
         
         newHistory.videoId = historys.count as NSNumber
-        newHistory.videoLink = videoURL.path
+        newHistory.videoLink = videoURL.absoluteString
         newHistory.videoDate = Date()
         
         do {
@@ -71,6 +71,7 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
             print("error")
         }
         return
+        
     }
     
     
@@ -97,6 +98,8 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
 //        avPlayer.play()
     }
 }
+    
+  
 }
 
 

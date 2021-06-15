@@ -13,7 +13,8 @@ class HistoryCollectionViewCell: UICollectionViewCell {
     var videoURL: URL!
     @IBOutlet weak var historyVideoView: UIView!
     
-
+    @IBOutlet weak var dateLabel: UILabel!
+    
 }
 
 
