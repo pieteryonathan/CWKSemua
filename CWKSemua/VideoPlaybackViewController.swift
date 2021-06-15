@@ -60,7 +60,7 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
         let message = (error == nil) ? "Video was saved!" : "Video failed to save"
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: { action in self.performSegue(withIdentifier: "home", sender: self) }))
         present(alert, animated: true, completion: nil)
     }
     

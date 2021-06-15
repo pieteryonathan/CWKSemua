@@ -158,11 +158,22 @@
                         <outlet property="fullScreen" destination="rh4-AQ-Dzp" id="fau-Hr-70X"/>
                         <outlet property="thumbnail" destination="Y4g-hf-3Kc" id="FjO-hk-Iv8"/>
                         <outlet property="videoView" destination="IcG-RK-qmO" id="A4E-t0-qsi"/>
+                        <segue destination="mEp-bz-eeT" kind="show" identifier="home" id="s9g-wO-swj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="79d-7t-xBA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1364.2180094786729" y="-86.153846153846146"/>
+            <point key="canvasLocation" x="1373" y="-65"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="txz-9d-2mg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="mEp-bz-eeT" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2xR-ca-VS4"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4WR-Nx-gnN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1803" y="-101"/>
         </scene>
     </scenes>
     <resources>
