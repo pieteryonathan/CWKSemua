@@ -87,6 +87,22 @@
                                         <rect key="frame" x="0.0" y="8" width="855" height="364"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQH-jp-TO5">
+                                        <rect key="frame" x="708" y="162" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="testButton:" destination="hVl-nf-6lq" eventType="touchUpInside" id="l8E-5V-9jv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g58-gD-zEv">
+                                        <rect key="frame" x="708" y="216" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <segue destination="y3d-Wy-jEb" kind="show" id="izJ-xd-8Ls"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -145,6 +161,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="79d-7t-xBA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1364.2180094786729" y="-86.153846153846146"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="5gw-Ev-YfU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="y3d-Wy-jEb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="msM-a4-dEv"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HbS-6Z-u6m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1801" y="-21"/>
         </scene>
     </scenes>
     <resources>

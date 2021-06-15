@@ -66,14 +66,17 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
         do {
             historys.append(newHistory)
             try context.save()
-            navigationController?.popViewController(animated: true)
         } catch {
             print("error")
         }
         return
         
+        
     }
     
+//    @IBAction func testButton(_ sender: UIButton) {
+//        print(historys)
+//    }
     
     @objc func video(_ videoPath: String, didFinishSavingWithError error: Error?, contextInfo info: AnyObject) {
         let title = (error == nil) ? "Success" : "Sorry"
