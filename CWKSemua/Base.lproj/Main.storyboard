@@ -93,9 +93,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egL-F3-qXK">
-                                <rect key="frame" x="120" y="677" width="150" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egL-F3-qXK">
+                                <rect key="frame" x="120" y="716" width="150" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Begin Exercise!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -114,6 +113,11 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7zS-6T-Bcq"/>
                         <color key="backgroundColor" red="0.026413656769999998" green="0.1836847663" blue="0.2196135521" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="7zS-6T-Bcq" firstAttribute="bottom" secondItem="egL-F3-qXK" secondAttribute="bottom" constant="64" id="AAW-08-aI5"/>
+                            <constraint firstItem="egL-F3-qXK" firstAttribute="leading" secondItem="7zS-6T-Bcq" secondAttribute="leading" constant="120" id="OeA-Ex-Hqk"/>
+                            <constraint firstItem="7zS-6T-Bcq" firstAttribute="trailing" secondItem="egL-F3-qXK" secondAttribute="trailing" constant="120" id="cQP-10-VwD"/>
+                        </constraints>
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -139,7 +143,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="TjS-tq-lJG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ryo-1B-gLG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gTy-IP-fqZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3Rq-Tp-PQx">
@@ -152,6 +155,7 @@
                         <segue destination="Btv-od-7Ta" kind="relationship" relationship="viewControllers" id="qbN-T6-apy"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ryo-1B-gLG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="778" y="115"/>
         </scene>
@@ -197,7 +201,6 @@
         <!--Training-->
         <scene sceneID="qzA-V4-Jb8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SfT-C0-bQo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qHv-Bf-jqv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Training" image="star.fill" catalog="system" id="3V9-Ng-9Iu"/>
                     <toolbarItems/>
@@ -211,6 +214,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NiZ-4L-gha"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SfT-C0-bQo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1845" y="115"/>
         </scene>
