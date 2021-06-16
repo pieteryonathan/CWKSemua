@@ -102,7 +102,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="I7S-Gb-AOy" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="VbB-9K-cik"/>
+                                    <action selector="buttonPressed" destination="xHc-Q7-n64" eventType="touchUpInside" id="o96-I1-zJS"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1W-WT-6Cj">
@@ -121,6 +121,7 @@
                         <outlet property="beginButton" destination="egL-F3-qXK" id="lBi-nP-OhL"/>
                         <outlet property="descDetailLabel" destination="3Ft-3n-sqs" id="Bl2-zF-jPL"/>
                         <outlet property="previewView" destination="esc-GS-VQx" id="WiB-9Z-eTr"/>
+                        <segue destination="I7S-Gb-AOy" kind="presentation" identifier="toShowCamera" modalPresentationStyle="fullScreen" id="szp-B7-J67"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hp-oH-n4U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

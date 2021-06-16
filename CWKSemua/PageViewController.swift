@@ -21,6 +21,8 @@ class PageViewController: UIViewController, UIScrollViewDelegate {
     var previewLayer: AVCaptureVideoPreviewLayer!
 
     var activeInput: AVCaptureDeviceInput!
+    
+    var delegate: DismissToMainDelegate?
 
 //    var outputURL: URL!
     
@@ -177,6 +179,16 @@ class PageViewController: UIViewController, UIScrollViewDelegate {
     
          return orientation
      }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "moveToCamera"{
+            guard let destination = segue.destination as? CameraViewController else{
+                return
+            }
+            
+            destination.delegate = delegate
+        }
+    }
 
 //    @objc func startCapture() {
 //
