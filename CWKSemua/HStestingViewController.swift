@@ -44,10 +44,13 @@ class HStestingViewController: UIViewController {
             
         }
         
+        
         avPlayerLayer = AVPlayerLayer(player: avPlayer)
         avPlayerLayer.frame = historyFullScreen.bounds
         avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         historyFullScreen.layer.insertSublayer(avPlayerLayer, at: 0)
+        
+      
     
     }
 
@@ -82,9 +85,33 @@ extension HStestingViewController: UICollectionViewDelegate, UICollectionViewDat
     
 }
 
-
 func dateToString(date: Date) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "d MMM y, HH:mm"
     return dateFormatter.string(from: date)
 }
+
+func getThumbnailImageFromVideoUrl(url: URL, completion: @escaping ((_ image: UIImage?)->Void)) {
+       DispatchQueue.global().async { //1
+           let asset = AVAsset(url: url) //2
+           let avAssetImageGenerator = AVAssetImageGenerator(asset: asset) //3
+           avAssetImageGenerator.appliesPreferredTrackTransform = true //4
+           let thumnailTime = CMTimeMake(value: 2, timescale: 1) //5
+           do {
+               let cgThumbImage = try avAssetImageGenerator.copyCGImage(at: thumnailTime, actualTime: nil) //6
+               let thumbImage = UIImage(cgImage: cgThumbImage) //7
+               DispatchQueue.main.async { //8
+                   completion(thumbImage) //9
+               }
+           } catch {
+               print(error.localizedDescription) //10
+               DispatchQueue.main.async {
+                   completion(nil) //11
+               }
+           }
+       }
+   }
+//
+//self.getThumbnailImageFromVideoUrl(url: URL) { (thumbImage) in
+//    self.thumbnail.image = thumbImage}
+
