@@ -443,6 +443,7 @@ extension CameraViewController: UIImagePickerControllerDelegate{
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "showVideo", sender: self.outputURL)
             }
+            self.recordEngga = false
            
             
         }
