@@ -77,6 +77,11 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
         
     }
     
+   
+    @IBAction func cancelButtonGotPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+        print("cancel kepencet")
+    }
     
     @objc func video(_ videoPath: String, didFinishSavingWithError error: Error?, contextInfo info: AnyObject) {
         let title = (error == nil) ? "Success" : "Sorry"

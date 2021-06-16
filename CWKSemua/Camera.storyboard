@@ -118,6 +118,9 @@
                                                 <rect key="frame" x="64" y="1" width="187" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="cancelButtonGotPressed:" destination="hVl-nf-6lq" eventType="touchUpInside" id="x1c-da-ESf"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="qTM-Gb-4kg">
