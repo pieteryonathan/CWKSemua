@@ -127,7 +127,7 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
             //        avPlayer.play()
         }
     }
-}
+
     
     func getThumbnailImageFromVideoUrl(url: URL, completion: @escaping ((_ image: UIImage?)->Void)) {
         DispatchQueue.global().async { //1
