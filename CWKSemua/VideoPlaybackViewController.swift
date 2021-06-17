@@ -69,11 +69,11 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
         do {
             historys.append(newHistory)
             try context.save()
-            navigationController?.popViewController(animated: true)
         } catch {
             print("error")
         }
         return
+        
         
     }
     

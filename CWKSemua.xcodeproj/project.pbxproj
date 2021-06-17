@@ -33,10 +33,12 @@
 		A7FC63D6266E67A500859CC0 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FC63D5266E67A500859CC0 /* CameraViewController.swift */; };
 		A7FC63D9266E68FB00859CC0 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FC63D8266E68FB00859CC0 /* VideoCapture.swift */; };
 		A7FC6430266EE80D00859CC0 /* VideoPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FC642F266EE80D00859CC0 /* VideoPlaybackViewController.swift */; };
-		AB6DCD292677635800B0693C /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DCD282677635800B0693C /* HistoryViewController.swift */; };
-		AB6DCD2D2677663D00B0693C /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DCD2C2677663D00B0693C /* HistoryCollectionViewCell.swift */; };
 		AB6DCD302677683200B0693C /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DCD2E2677683200B0693C /* History+CoreDataClass.swift */; };
 		AB6DCD312677683200B0693C /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DCD2F2677683200B0693C /* History+CoreDataProperties.swift */; };
+		AB6DCD332678E79500B0693C /* HistoryTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DCD322678E79500B0693C /* HistoryTesting.swift */; };
+		AB6DCD3526790FFA00B0693C /* HStestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DCD3426790FFA00B0693C /* HStestingViewController.swift */; };
+		AB6DCD382679127B00B0693C /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6DCD362679127B00B0693C /* HistoryCollectionViewCell.swift */; };
+		AB6DCD392679127B00B0693C /* HistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB6DCD372679127B00B0693C /* HistoryCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,10 +70,12 @@
 		A7FC63D5266E67A500859CC0 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		A7FC63D8266E68FB00859CC0 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 		A7FC642F266EE80D00859CC0 /* VideoPlaybackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaybackViewController.swift; sourceTree = "<group>"; };
-		AB6DCD282677635800B0693C /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		AB6DCD2C2677663D00B0693C /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB6DCD2E2677683200B0693C /* History+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AB6DCD2F2677683200B0693C /* History+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "History+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AB6DCD322678E79500B0693C /* HistoryTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTesting.swift; sourceTree = "<group>"; };
+		AB6DCD3426790FFA00B0693C /* HStestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStestingViewController.swift; sourceTree = "<group>"; };
+		AB6DCD362679127B00B0693C /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB6DCD372679127B00B0693C /* HistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +125,10 @@
 				A7D088F7266F42370044AB95 /* DetailViewController.swift */,
 				A7CF21D1267341C1007B54F9 /* Camera.storyboard */,
 				5B9A7DFD266D06A7008053F9 /* Main.storyboard */,
-				AB6DCD282677635800B0693C /* HistoryViewController.swift */,
-				AB6DCD2C2677663D00B0693C /* HistoryCollectionViewCell.swift */,
+				AB6DCD362679127B00B0693C /* HistoryCollectionViewCell.swift */,
+				AB6DCD372679127B00B0693C /* HistoryCollectionViewCell.xib */,
+				AB6DCD3426790FFA00B0693C /* HStestingViewController.swift */,
+				AB6DCD322678E79500B0693C /* HistoryTesting.swift */,
 				5BBFF36C266F5ACF0003EBEB /* PageViewController.storyboard */,
 				5BBFF36E266F5BE10003EBEB /* PageViewController.swift */,
 				5BE53E5F266DE6D20049BBF8 /* Landscape.storyboard */,
@@ -254,6 +260,7 @@
 			files = (
 				5B9A7E07266D06A8008053F9 /* LaunchScreen.storyboard in Resources */,
 				A7CF21D2267341C1007B54F9 /* Camera.storyboard in Resources */,
+				AB6DCD392679127B00B0693C /* HistoryCollectionViewCell.xib in Resources */,
 				5B9A7E04266D06A8008053F9 /* Assets.xcassets in Resources */,
 				5BE53E60266DE6D20049BBF8 /* Landscape.storyboard in Resources */,
 				5B9A7DFF266D06A7008053F9 /* Main.storyboard in Resources */,
@@ -270,10 +277,10 @@
 			files = (
 				A7EA82D92672EFDB0032CAA7 /* VideoProcessing.swift in Sources */,
 				A7FC63D9266E68FB00859CC0 /* VideoCapture.swift in Sources */,
+				AB6DCD3526790FFA00B0693C /* HStestingViewController.swift in Sources */,
+				AB6DCD382679127B00B0693C /* HistoryCollectionViewCell.swift in Sources */,
 				5BBFF36F266F5BE10003EBEB /* PageViewController.swift in Sources */,
-				AB6DCD2D2677663D00B0693C /* HistoryCollectionViewCell.swift in Sources */,
 				A7EA82CB2672E5050032CAA7 /* FootworkClassifier.mlmodel in Sources */,
-				AB6DCD292677635800B0693C /* HistoryViewController.swift in Sources */,
 				A7EA82CE2672E6250032CAA7 /* FootworkClassifierLabel.swift in Sources */,
 				5BE53E70266E1DF70049BBF8 /* GradientColor.swift in Sources */,
 				AB6DCD312677683200B0693C /* History+CoreDataProperties.swift in Sources */,
@@ -287,6 +294,7 @@
 				AB6DCD302677683200B0693C /* History+CoreDataClass.swift in Sources */,
 				A7EA82C62672E04A0032CAA7 /* Pose.swift in Sources */,
 				5BE53E6E266E1D280049BBF8 /* HomePageViewController.swift in Sources */,
+				AB6DCD332678E79500B0693C /* HistoryTesting.swift in Sources */,
 				A7EA82C22672DFCC0032CAA7 /* AVCaptureVideoDataOutput.swift in Sources */,
 				A7D088F8266F42370044AB95 /* DetailViewController.swift in Sources */,
 				A7EA82D22672E82B0032CAA7 /* FootworkClassifierPredict.swift in Sources */,
