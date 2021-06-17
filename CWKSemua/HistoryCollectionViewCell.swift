@@ -11,4 +11,5 @@ class HistoryCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var testingLabel: UILabel!
     @IBOutlet weak var historyVideoView: UIView!
+    @IBOutlet weak var imageViewThumbnail: UIImageView!
 }

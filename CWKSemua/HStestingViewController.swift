@@ -50,6 +50,7 @@ class HStestingViewController: UIViewController {
         avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         historyFullScreen.layer.insertSublayer(avPlayerLayer, at: 0)
         
+        
       
     
     }
@@ -69,6 +70,13 @@ extension HStestingViewController: UICollectionViewDelegate, UICollectionViewDat
         thisHistory = historys[indexPath.row]
         
         cell.testingLabel.text = dateToString(date: thisHistory.videoDate!)
+        cell.imageViewThumbnail.layer.cornerRadius = 10
+        
+        
+        let fileURL = URL(fileURLWithPath: thisHistory.videoLink!)
+        getThumbnailImageFromVideoUrl(url: fileURL) { (result) in
+            cell.imageViewThumbnail.image = result
+        }
     
         return cell
     }
@@ -78,6 +86,9 @@ extension HStestingViewController: UICollectionViewDelegate, UICollectionViewDat
         let player = AVPlayer(url: url)
         let videoplayer = AVPlayerViewController()
         videoplayer.player = player
+        
+        
+        
         self.present(videoplayer, animated: true){
             videoplayer.player!.play()
         }
@@ -90,6 +101,7 @@ func dateToString(date: Date) -> String {
     dateFormatter.dateFormat = "d MMM y, HH:mm"
     return dateFormatter.string(from: date)
 }
+
 
 func getThumbnailImageFromVideoUrl(url: URL, completion: @escaping ((_ image: UIImage?)->Void)) {
        DispatchQueue.global().async { //1
