@@ -98,9 +98,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 3" id="il5-Bv-WFI">
-                                <rect key="frame" x="-12" y="0.0" width="409" height="229"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 3" translatesAutoresizingMaskIntoConstraints="NO" id="llb-gm-JFH">
+                                <rect key="frame" x="-30" y="4" width="440" height="229"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esc-GS-VQx">
                                 <rect key="frame" x="23" y="173" width="344" height="274"/>
@@ -152,6 +151,8 @@
                         <constraints>
                             <constraint firstItem="bm9-lD-K6b" firstAttribute="leading" secondItem="7zS-6T-Bcq" secondAttribute="leading" constant="32" id="6Gs-Ga-3JA"/>
                             <constraint firstItem="U1W-WT-6Cj" firstAttribute="leading" secondItem="7zS-6T-Bcq" secondAttribute="leading" constant="28" id="8TX-xf-QGv"/>
+                            <constraint firstItem="llb-gm-JFH" firstAttribute="leading" secondItem="7zS-6T-Bcq" secondAttribute="leading" constant="-30" id="9b0-nj-l5K"/>
+                            <constraint firstItem="7zS-6T-Bcq" firstAttribute="trailing" secondItem="llb-gm-JFH" secondAttribute="trailing" constant="-20" id="9bP-LF-aoE"/>
                             <constraint firstItem="esc-GS-VQx" firstAttribute="centerX" secondItem="hdg-Bx-JU3" secondAttribute="centerX" id="CkT-wl-zsv"/>
                             <constraint firstItem="3Ft-3n-sqs" firstAttribute="leading" secondItem="7zS-6T-Bcq" secondAttribute="leading" constant="23" id="DKy-tl-7fh"/>
                             <constraint firstItem="esc-GS-VQx" firstAttribute="top" secondItem="bm9-lD-K6b" secondAttribute="bottom" constant="70.670000000000002" id="MGk-Fj-WL2"/>
@@ -163,6 +164,7 @@
                             <constraint firstItem="egL-F3-qXK" firstAttribute="leading" secondItem="7zS-6T-Bcq" secondAttribute="leading" constant="24" id="XO9-aW-6hz"/>
                             <constraint firstItem="3Ft-3n-sqs" firstAttribute="top" secondItem="U1W-WT-6Cj" secondAttribute="bottom" constant="21.670000000000002" id="d9M-i0-jV4"/>
                             <constraint firstItem="bm9-lD-K6b" firstAttribute="top" secondItem="7zS-6T-Bcq" secondAttribute="top" constant="20" id="oTF-rn-AZa"/>
+                            <constraint firstItem="llb-gm-JFH" firstAttribute="top" secondItem="7zS-6T-Bcq" secondAttribute="top" constant="-40" id="ypJ-S3-x9m"/>
                         </constraints>
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
