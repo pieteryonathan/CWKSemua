@@ -13,17 +13,13 @@ import ReplayKit
 
 class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     
-    //    @IBOutlet weak var camPreview: UIView!
     @IBOutlet weak var camPreview: UIView!
     @IBOutlet weak var camButton: UIButton!
     
-    @IBOutlet weak var image2View: UIImageView!
-    //    let cameraButton = UIView()
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var actionLabel: UILabel!
     @IBOutlet weak var confidenceLabel: UILabel!
-    //    let cameraButton = UIView()
     
     let recorder = RPScreenRecorder.shared()
     var recordEngga = false
@@ -46,35 +42,16 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let value = UIInterfaceOrientation.landscapeLeft.rawValue
         
         UIApplication.shared.isIdleTimerDisabled = true
 
-//        UIDevice.current.setValue(value, forKey: "orientation")
         videoProcessingChain = VideoProcessingChain()
         videoProcessingChain.delegate = self
 
-        // Begin receiving frames from the video capture.
         videoCapture = VideoCapture()
         videoCapture.delegate = self
 
         updateUILabelsWithPrediction(.startingPrediction)
-//        if setupSession() {
-//            setupPreview()
-//            startSession()
-//        }
-    
-//        cameraButton.isUserInteractionEnabled = true
-//
-//        let cameraButtonRecognizer = UITapGestureRecognizer(target: self, action: #selector(CameraViewController.startCapture))
-//
-//        cameraButton.addGestureRecognizer(cameraButtonRecognizer)
-//
-//        cameraButton.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-//
-//        cameraButton.backgroundColor = UIColor.red
-    
-//        camPreview.addSubview(cameraButton)
     
     }
     
@@ -84,11 +61,9 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         // Update the device's orientation.
         videoCapture.updateDeviceOrientation()
     }
-
-    /// Notifies the video capture when the device rotates to a new orientation.
+    
     override func viewWillTransition(to size: CGSize,
                                      with coordinator: UIViewControllerTransitionCoordinator) {
-        // Update the the camera's orientation to match the device's.
         videoCapture.updateDeviceOrientation()
     }
     
@@ -332,11 +307,9 @@ extension CameraViewController {
 
             cgContext.concatenate(inverse)
 
-            //camera capture
             let imageRectangle = CGRect(origin: .zero, size: frameSize)
             cgContext.draw(frame, in: imageRectangle)
             
-//            print("frame:",frame)\
             let pointTransform = CGAffineTransform(scaleX: frameSize.width,
                                                    y: frameSize.height)
             let pointTransform2 = CGAffineTransform(scaleX: frameSize.width+100,
@@ -349,30 +322,9 @@ extension CameraViewController {
                 pose.drawWireframeToContext2(cgContext, applying: pointTransform2)
             }
         }
-        
-        let frameWithPosesRendering2 = poseRenderer.image { rendererContext in
-            let cgContext = rendererContext.cgContext
-            let inverse = cgContext.ctm.inverted()
 
-            cgContext.concatenate(inverse)
-
-//            let imageRectangle = CGRect(origin: .zero, size: frameSize)
-//            cgContext.draw(frame, in: imageRectangle)
-//            print("frame:",frame)\
-            
-            let pointTransform = CGAffineTransform(scaleX: frameSize.width+1080,
-                                                   y: frameSize.height)
-
-            guard let poses = poses else { return }
-//            print("pointTransform: \(pointTransform)")
-
-            for pose in poses {
-                pose.drawWireframeToContext2(cgContext, applying: pointTransform)
-            }
-        }
 
         DispatchQueue.main.async { self.imageView.image = frameWithPosesRendering }
-        DispatchQueue.main.async { self.image2View.image = frameWithPosesRendering2 }
 
     }
 }

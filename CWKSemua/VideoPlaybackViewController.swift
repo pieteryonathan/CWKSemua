@@ -25,11 +25,12 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
     
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var fullScreen: UIView!
+    
     override func viewDidLoad() {
 
             super.viewDidLoad()
 
-            let value = UIInterfaceOrientation.landscapeLeft.rawValue
+            let value = UIInterfaceOrientation.landscapeRight.rawValue
             UIDevice.current.setValue(value, forKey: "orientation")
 
             avPlayerLayer = AVPlayerLayer(player: avPlayer)
@@ -64,7 +65,7 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
       
     @IBAction func playButton(_ sender: Any) {
         videoView.isHidden = false
-        let playerItem = AVPlayerItem(url: videoURL as URL)
+//        let playerItem = AVPlayerItem(url: videoURL as URL)
         let player = AVPlayer(url: videoURL as URL)
         let videoplayer = AVPlayerViewController()
         videoplayer.player = player
