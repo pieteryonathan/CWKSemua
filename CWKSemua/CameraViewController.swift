@@ -47,8 +47,8 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         
         UIApplication.shared.isIdleTimerDisabled = true
 
-//        let value = UIInterfaceOrientation.landscapeLeft.rawValue
-//        UIDevice.current.setValue(value, forKey: "orientation")
+        let value = UIInterfaceOrientation.landscapeRight.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
         
         buttonstoprecord.isHidden = true
         
@@ -62,17 +62,17 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        // Update the device's orientation.
-        videoCapture.updateDeviceOrientation()
-    }
-    
-    override func viewWillTransition(to size: CGSize,
-                                     with coordinator: UIViewControllerTransitionCoordinator) {
-        videoCapture.updateDeviceOrientation()
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//
+//        // Update the device's orientation.
+//        videoCapture.updateDeviceOrientation()
+//    }
+//
+//    override func viewWillTransition(to size: CGSize,
+//                                     with coordinator: UIViewControllerTransitionCoordinator) {
+//        videoCapture.updateDeviceOrientation()
+//    }
     
     @IBAction func buttonOnClick(_ sender: UIButton) {
         
@@ -93,7 +93,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         self.previewLayer.frame = self.camPreview.bounds
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        previewLayer.connection?.videoOrientation = currentVideoOrientation()
+//        previewLayer.connection?.videoOrientation = currentVideoOrientation()
         camPreview.layer.addSublayer(previewLayer)
         camPreview.addSubview(imageView)
         camPreview.addSubview(actionLabel)
@@ -171,22 +171,22 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         return DispatchQueue.main
     }
     
-    func currentVideoOrientation() -> AVCaptureVideoOrientation {
-        var orientation: AVCaptureVideoOrientation
-        
-        switch UIDevice.current.orientation {
-        case .portrait:
-            orientation = AVCaptureVideoOrientation.portrait
-        case .landscapeRight:
-            orientation = AVCaptureVideoOrientation.landscapeLeft
-        case .portraitUpsideDown:
-            orientation = AVCaptureVideoOrientation.portraitUpsideDown
-        default:
-            orientation = AVCaptureVideoOrientation.landscapeRight
-        }
-        
-        return orientation
-    }
+//    func currentVideoOrientation() -> AVCaptureVideoOrientation {
+//        var orientation: AVCaptureVideoOrientation
+//
+//        switch UIDevice.current.orientation {
+//        case .portrait:
+//            orientation = AVCaptureVideoOrientation.portrait
+//        case .landscapeRight:
+//            orientation = AVCaptureVideoOrientation.landscapeLeft
+//        case .portraitUpsideDown:
+//            orientation = AVCaptureVideoOrientation.portraitUpsideDown
+//        default:
+//            orientation = AVCaptureVideoOrientation.landscapeRight
+//        }
+//
+//        return orientation
+//    }
     
     @objc func startCapture() {
         
@@ -224,9 +224,9 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
             
             let connection = movieOutput.connection(with: AVMediaType.video)
             
-            if (connection?.isVideoOrientationSupported)! {
-                connection?.videoOrientation = currentVideoOrientation()
-            }
+//            if (connection?.isVideoOrientationSupported)! {
+//                connection?.videoOrientation = currentVideoOrientation()
+//            }
             
             if (connection?.isVideoStabilizationSupported)! {
                 connection?.preferredVideoStabilizationMode = AVCaptureVideoStabilizationMode.auto
@@ -286,7 +286,9 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         
     }
     
-    
+    override var shouldAutorotate: Bool {
+         return false
+     }
     
 }
 

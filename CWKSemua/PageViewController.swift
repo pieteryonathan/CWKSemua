@@ -189,6 +189,10 @@ class PageViewController: UIViewController, UIScrollViewDelegate {
             destination.delegate = delegate
         }
     }
+    
+    override var shouldAutorotate: Bool {
+        return false
+    }
 
 //    @objc func startCapture() {
 //

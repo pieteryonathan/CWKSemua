@@ -17,7 +17,16 @@ class HomePageViewController: UIViewController {
        //deleteDataPlan()
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIDevice.current.setValue((UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
+    }
 
+    override open var shouldAutorotate: Bool{
+        return false
+    }
+    
 }
 
 func deleteDataPlan(){
@@ -40,3 +49,22 @@ func deleteDataPlan(){
     }
 
     }
+
+extension UINavigationController{
+    func shouldAutorotate() -> Bool {
+    if !viewControllers.isEmpty {
+
+      // Check if this ViewController is the one you want to disable roration on
+        if topViewController!.isKind(of: HomePageViewController.self){
+
+        // If true return false to disable it
+        return false
+      }
+    }
+
+    // Else normal rotation enabled
+    return false
+    }
+}
+
+

@@ -42,7 +42,7 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
             self.thumbnail.image = thumbImage
         }
         
-            let value = UIInterfaceOrientation.landscapeLeft.rawValue
+            let value = UIInterfaceOrientation.landscapeRight.rawValue
             UIDevice.current.setValue(value, forKey: "orientation")
 
             avPlayerLayer = AVPlayerLayer(player: avPlayer)
@@ -122,11 +122,12 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
         videoplayer.player = player
         self.present(videoplayer, animated: true) {
             videoplayer.player!.play()
-            
+        
             //        avPlayer.replaceCurrentItem(with: playerItem)
             //        avPlayer.play()
         }
     }
+    
 
     
     func getThumbnailImageFromVideoUrl(url: URL, completion: @escaping ((_ image: UIImage?)->Void)) {
@@ -148,6 +149,14 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
                 }
             }
         }
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+        return .landscapeRight
+    }
+    
+    override var shouldAutorotate: Bool {
+        return false
     }
     
 }
