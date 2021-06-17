@@ -13,17 +13,14 @@ import ReplayKit
 
 class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     
-    //    @IBOutlet weak var camPreview: UIView!
     @IBOutlet weak var camPreview: UIView!
     @IBOutlet weak var camButton: UIButton!
     
-//    let cameraButton = UIView()
 
     @IBOutlet weak var buttonstoprecord: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var actionLabel: UILabel!
     @IBOutlet weak var confidenceLabel: UILabel!
-    //    let cameraButton = UIView()
     
     let recorder = RPScreenRecorder.shared()
     var recordEngga = false
@@ -46,6 +43,9 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UIApplication.shared.isIdleTimerDisabled = true
+
 //        let value = UIInterfaceOrientation.landscapeLeft.rawValue
 //        UIDevice.current.setValue(value, forKey: "orientation")
         
@@ -54,27 +54,10 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         videoProcessingChain = VideoProcessingChain()
         videoProcessingChain.delegate = self
 
-        // Begin receiving frames from the video capture.
         videoCapture = VideoCapture()
         videoCapture.delegate = self
 
         updateUILabelsWithPrediction(.startingPrediction)
-//        if setupSession() {
-//            setupPreview()
-//            startSession()
-//        }
-    
-//        cameraButton.isUserInteractionEnabled = true
-//
-//        let cameraButtonRecognizer = UITapGestureRecognizer(target: self, action: #selector(CameraViewController.startCapture))
-//
-//        cameraButton.addGestureRecognizer(cameraButtonRecognizer)
-//
-//        cameraButton.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-//
-//        cameraButton.backgroundColor = UIColor.red
-    
-//        camPreview.addSubview(cameraButton)
     
     }
     
@@ -84,11 +67,9 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         // Update the device's orientation.
         videoCapture.updateDeviceOrientation()
     }
-
-    /// Notifies the video capture when the device rotates to a new orientation.
+    
     override func viewWillTransition(to size: CGSize,
                                      with coordinator: UIViewControllerTransitionCoordinator) {
-        // Update the the camera's orientation to match the device's.
         videoCapture.updateDeviceOrientation()
     }
     
@@ -336,18 +317,23 @@ extension CameraViewController {
 
             let imageRectangle = CGRect(origin: .zero, size: frameSize)
             cgContext.draw(frame, in: imageRectangle)
-//            print("frame:",frame)\
+            
             let pointTransform = CGAffineTransform(scaleX: frameSize.width,
+                                                   y: frameSize.height)
+            let pointTransform2 = CGAffineTransform(scaleX: frameSize.width+100,
                                                    y: frameSize.height)
 
             guard let poses = poses else { return }
 
             for pose in poses {
                 pose.drawWireframeToContext(cgContext, applying: pointTransform)
+                pose.drawWireframeToContext2(cgContext, applying: pointTransform2)
             }
         }
 
+
         DispatchQueue.main.async { self.imageView.image = frameWithPosesRendering }
+
     }
 }
 
@@ -385,37 +371,6 @@ extension CameraViewController: VideoProcessingChainDelegate {
 }
 
 
-//class CameraViewController: UIViewController{
-//
-//    let videoCapture = VideoCapture()
-//    //    var previewLayer -
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        videoCapture.startCaptureSession()
-////        videoCapture.captureOutput(<#T##output: AVCaptureOutput##AVCaptureOutput#>, didDrop: <#T##CMSampleBuffer#>, from: <#T##AVCaptureConnection#>)
-//
-//        let previewLayer = AVCaptureVideoPreviewLayer(session: videoCapture.captureSession)
-//
-//        view.layer.addSublayer(previewLayer)
-//        previewLayer.frame = view.frame
-//    }
-
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        let captureSession = AVCaptureSession()
-//        captureSession.sessionPreset = .photo
-//        guard let captureDevice = AVCaptureDevice.default(for: .video) else {return}
-//        guard let input = try? AVCaptureDeviceInput(device: captureDevice) else {return}
-//        captureSession.addInput(input)
-//
-//        captureSession.startRunning()
-//
-//        view.layer.addSublayer(previewLayer)
-//        previewLayer.frame = view.frame
-//    }
-//}
 extension CameraViewController: UIImagePickerControllerDelegate{
     
     

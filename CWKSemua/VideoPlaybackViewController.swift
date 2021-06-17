@@ -26,6 +26,7 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var fullScreen: UIView!
+    
     override func viewDidLoad() {
 
             super.viewDidLoad()
@@ -69,7 +70,7 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
       
     @IBAction func playButton(_ sender: Any) {
         videoView.isHidden = false
-        let playerItem = AVPlayerItem(url: videoURL as URL)
+//        let playerItem = AVPlayerItem(url: videoURL as URL)
         let player = AVPlayer(url: videoURL as URL)
         let videoplayer = AVPlayerViewController()
         videoplayer.player = player
