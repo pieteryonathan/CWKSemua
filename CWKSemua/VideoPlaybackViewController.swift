@@ -30,20 +30,26 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
     
     //connect this to your uiview in storyboard
     
+    @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var fullScreen: UIView!
+    
     override func viewDidLoad() {
+
+            super.viewDidLoad()
+
+            self.getThumbnailImageFromVideoUrl(url: videoURL) { (thumbImage) in
+            self.thumbnail.image = thumbImage
+        }
         
-        super.viewDidLoad()
-        
-        let value = UIInterfaceOrientation.landscapeLeft.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
-        
-        avPlayerLayer = AVPlayerLayer(player: avPlayer)
-        avPlayerLayer.frame = fullScreen.bounds
-        avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        fullScreen.layer.insertSublayer(avPlayerLayer, at: 0)
-        videoView.layer.cornerRadius = 30
+            let value = UIInterfaceOrientation.landscapeLeft.rawValue
+            UIDevice.current.setValue(value, forKey: "orientation")
+
+            avPlayerLayer = AVPlayerLayer(player: avPlayer)
+            avPlayerLayer.frame = fullScreen.bounds
+            avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+            fullScreen.layer.insertSublayer(avPlayerLayer, at: 0)
+            videoView.layer.cornerRadius = 30
         videoView.setTwoGradient(width: videoView.frame.size.width, height: videoView.frame.size.height)
         view.layoutIfNeeded()
         
@@ -110,7 +116,7 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
     
     @IBAction func playButton(_ sender: Any) {
         videoView.isHidden = false
-        let playerItem = AVPlayerItem(url: videoURL as URL)
+//        let playerItem = AVPlayerItem(url: videoURL as URL)
         let player = AVPlayer(url: videoURL as URL)
         let videoplayer = AVPlayerViewController()
         videoplayer.player = player
@@ -121,7 +127,28 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
             //        avPlayer.play()
         }
     }
+}
     
+    func getThumbnailImageFromVideoUrl(url: URL, completion: @escaping ((_ image: UIImage?)->Void)) {
+        DispatchQueue.global().async { //1
+            let asset = AVAsset(url: url) //2
+            let avAssetImageGenerator = AVAssetImageGenerator(asset: asset) //3
+            avAssetImageGenerator.appliesPreferredTrackTransform = true //4
+            let thumnailTime = CMTimeMake(value: 2, timescale: 1) //5
+            do {
+                let cgThumbImage = try avAssetImageGenerator.copyCGImage(at: thumnailTime, actualTime: nil) //6
+                let thumbImage = UIImage(cgImage: cgThumbImage) //7
+                DispatchQueue.main.async { //8
+                    completion(thumbImage) //9
+                }
+            } catch {
+                print(error.localizedDescription) //10
+                DispatchQueue.main.async {
+                    completion(nil) //11
+                }
+            }
+        }
+    }
     
 }
 
