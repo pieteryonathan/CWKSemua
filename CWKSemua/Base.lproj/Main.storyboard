@@ -94,8 +94,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egL-F3-qXK">
-                                <rect key="frame" x="120" y="716" width="150" height="30"/>
+                                <rect key="frame" x="24" y="698" width="342" height="48"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="s7c-X6-c8X"/>
+                                </constraints>
                                 <state key="normal" title="Begin Exercise!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -114,9 +117,9 @@
                         <viewLayoutGuide key="safeArea" id="7zS-6T-Bcq"/>
                         <color key="backgroundColor" red="0.026413656769999998" green="0.1836847663" blue="0.2196135521" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="7zS-6T-Bcq" firstAttribute="bottom" secondItem="egL-F3-qXK" secondAttribute="bottom" constant="64" id="AAW-08-aI5"/>
-                            <constraint firstItem="egL-F3-qXK" firstAttribute="leading" secondItem="7zS-6T-Bcq" secondAttribute="leading" constant="120" id="OeA-Ex-Hqk"/>
-                            <constraint firstItem="7zS-6T-Bcq" firstAttribute="trailing" secondItem="egL-F3-qXK" secondAttribute="trailing" constant="120" id="cQP-10-VwD"/>
+                            <constraint firstItem="7zS-6T-Bcq" firstAttribute="trailing" secondItem="egL-F3-qXK" secondAttribute="trailing" constant="24" id="Mic-0f-crN"/>
+                            <constraint firstItem="7zS-6T-Bcq" firstAttribute="bottom" secondItem="egL-F3-qXK" secondAttribute="bottom" constant="64" id="Q77-kj-FeN"/>
+                            <constraint firstItem="egL-F3-qXK" firstAttribute="leading" secondItem="7zS-6T-Bcq" secondAttribute="leading" constant="24" id="XO9-aW-6hz"/>
                         </constraints>
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>

@@ -17,6 +17,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     @IBOutlet weak var camButton: UIButton!
     
 
+    @IBOutlet weak var buttonstoprecord: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var actionLabel: UILabel!
     @IBOutlet weak var confidenceLabel: UILabel!
@@ -45,6 +46,11 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         
         UIApplication.shared.isIdleTimerDisabled = true
 
+//        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+//        UIDevice.current.setValue(value, forKey: "orientation")
+        
+        buttonstoprecord.isHidden = true
+        
         videoProcessingChain = VideoProcessingChain()
         videoProcessingChain.delegate = self
 
@@ -68,11 +74,13 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     }
     
     @IBAction func buttonOnClick(_ sender: UIButton) {
-    
+        
         if !recordEngga {
+            buttonstoprecord.isHidden = false
             startRecordingReplayKit()
         }
         else{
+            buttonstoprecord.isHidden = true
             stopRecordingReplayKit()
         }
         print("button pressed")
@@ -388,7 +396,6 @@ extension CameraViewController: UIImagePickerControllerDelegate{
                 return
             }
             print(self.outputURL)
-           
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "showVideo", sender: self.outputURL)
             }
