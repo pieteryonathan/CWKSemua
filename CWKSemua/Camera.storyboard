@@ -133,7 +133,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Cancel"/>
                                                 <connections>
-                                                    <segue destination="anr-fu-5PG" kind="show" id="q25-fA-Ql0"/>
+                                                    <action selector="cancelButtonGotPressed:" destination="hVl-nf-6lq" eventType="touchUpInside" id="x1c-da-ESf"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>

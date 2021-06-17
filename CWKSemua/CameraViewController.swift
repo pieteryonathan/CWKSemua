@@ -35,6 +35,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     
     var outputURL: URL!
     
+    var delegate: DismissToMainDelegate?
     
     var videoCapture: VideoCapture!
     var videoProcessingChain: VideoProcessingChain!
@@ -211,6 +212,9 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         let vc = segue.destination as! VideoPlaybackViewController
         
         vc.videoURL = sender as? URL
+        vc.delegate = delegate
+        
+        
         
     }
     
@@ -399,6 +403,7 @@ extension CameraViewController: UIImagePickerControllerDelegate{
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "showVideo", sender: self.outputURL)
             }
+            self.recordEngga = false
            
             
         }
