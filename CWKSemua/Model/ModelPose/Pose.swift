@@ -89,7 +89,7 @@ class Pose {
         } else if action == "lunge-front-right" {
             lungeSideRight(one: rhNew, two: lhNew)
         }
-        else if action =="lunge-front-left" {
+        else if action == "lunge-front-left" {
             
             lungeSideLeft(one: rhNew, two: lhNew)
         }

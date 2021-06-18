@@ -45,10 +45,10 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         videoProcessingChain = VideoProcessingChain()
         videoProcessingChain.delegate = self
         
-        updateUILabelsWithPrediction(.startingPrediction)
-        
         videoCapture = VideoCapture()
         videoCapture.delegate = self
+        
+        updateUILabelsWithPrediction(.startingPrediction)
         
         
     }
