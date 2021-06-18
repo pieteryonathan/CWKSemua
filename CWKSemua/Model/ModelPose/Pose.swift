@@ -16,7 +16,7 @@ struct Pose {
     var connections: [Connection]!
     var connections2: [Connection2]!
     let multiArray: MLMultiArray?
-    
+
     let area: CGFloat
     
     static func fromObservations(_ observations: [Observation]?) -> [Pose]? {
@@ -64,51 +64,25 @@ struct Pose {
                                        applying: transform,
                                        at: scale, color: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1))
             
-        }
-        //    connections2.forEach {
-        //        line in line.drawToContext(context,
-        //                                   applying: transform,
-        //                                   at: scale, color: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1))
-        //
-        //    }
-        
-        // Draw the landmarks on top of the lines' endpoints.
+        }        // Draw the landmarks on top of the lines' endpoints.
         
         landmarks.forEach { landmark in
             landmark.drawToContext(context,
                                    applying: transform,
                                    at: scale)
-//            print("landmark name: \(landmark.name) ** landmark location: \(landmark.location)")
         }
     }
     
     func drawWireframeToContext2(_ context: CGContext,
-                                 applying transform: CGAffineTransform? = nil) {
+                                 applying transform: CGAffineTransform? = nil, action: String) {
         let scale = drawingScale
-        
-        // Draw the connection lines first.
-        
-        
-        //    connections2.forEach {
-        //        line in line.drawToContext(context,
-        //                                   applying: transform,
-        //                                   at: scale, color: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1))
-        //    }
         
         connections2.forEach {
             line in line.drawToContext(context,
                                        applying: transform,
-                                       at: scale, color: #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1))
+                                       at: scale, color: #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1), action: action)
             
         }
-        
-        
-        //         Draw the landmarks on top of the lines' endpoints.
-        //        landmarks.forEach { landmark in
-        //            landmark.drawToContext(context,
-        //                                   applying: transform,
-        //                                   at: scale)
-        //        }
     }
     
     
@@ -169,20 +143,18 @@ extension Pose {
         }
         
         for jointPair in Pose.jointPairsBottomOnly {
-            guard let one = jointLocations[VNHumanBodyPoseObservation.JointName(rawValue: VNRecognizedPointKey(rawValue: "right_upLeg_joint") )] else { continue }
-            guard let two = jointLocations[VNHumanBodyPoseObservation.JointName(rawValue: VNRecognizedPointKey(rawValue: "left_upLeg_joint") )] else { continue }
             
             
-            print("joint 1 x:\(one.x)")
-            print("joint 1 y:\(one.y)")
-            print("joint 2 x:\(jointLocations[jointPair.joint2]?.x)")
-            print("joint 2 y:\(jointLocations[jointPair.joint2]?.y)")
-            print("cek hasil: \(jointPair.joint1)")
-            print("cek hasil2: \(jointPair.joint2)")
+//            print("joint 1 x:\(one.x)")
+//            print("joint 1 y:\(one.y)")
+//            print("joint 2 x:\(jointLocations[jointPair.joint2]?.x)")
+//            print("joint 2 y:\(jointLocations[jointPair.joint2]?.y)")
+//            print("cek hasil: \(jointPair.joint1)")
+//            print("cek hasil2: \(jointPair.joint2)")
             
 //          Call function suggestion pose
 //            lungeSideRight(one: one, two: two)
-            lungeSideLeft(one: one, two: two)
+//            lungeSideLeft(one: rh, two: lh)
             
         }
     }
@@ -356,13 +328,17 @@ extension Pose {
         /// The connection's second endpoint.
         private let point2: CGPoint
         
+        // action
+//        private let action: String
+        
         /// Creates a connection from two points.
         init(_ one: CGPoint, _ two: CGPoint) { point1 = one; point2 = two }
         
         func drawToContext(_ context: CGContext,
                            applying transform: CGAffineTransform? = nil,
-                           at scale: CGFloat = 1.0, color: CGColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)) {
+                           at scale: CGFloat = 1.0, color: CGColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), action: String) {
             
+            var action = action
             let start = point1.applying(transform ?? .identity)
             let end = point2.applying(transform ?? .identity)
             
@@ -379,15 +355,7 @@ extension Pose {
             // Draw the line.
             context.move(to: start)
             context.addLine(to: end)
-            //            context.replacePathWithStrokedPath()
-            //            context.clip()
-            //            context.setFillColor(#colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1))
-            //            context.drawPath(using: .fill)
             context.strokePath()
-            //            context.drawLinearGradient(Connection.gradient,
-            //                                       start: start,
-            //                                       end: end,
-            //                                       options: .drawsAfterEndLocation)
         }
     }
 }
