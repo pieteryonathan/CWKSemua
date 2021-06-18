@@ -184,30 +184,87 @@ extension Pose {
             print("cek hasil: \(jointPair.joint1)")
             print("cek hasil2: \(jointPair.joint2)")
             
+//          Call functino suggestion pose
+//            lungeSideRight(one: one, two: two)
+            lungeSideLeft(one: one, two: two)
+            
+            
 //            connections2.append(Connection2(jointLocations[Pose.jointPairsBottomOnly[0]]))
-            var rkPosition = one
-            rkPosition.y = rkPosition.y - 0.22
-            rkPosition.x = rkPosition.x - 0.1
-            
-            var lkPosition = two
-            lkPosition.y = lkPosition.y - 0.22
-            lkPosition.x = lkPosition.x + 0.0
-            
-            var raPosition = rkPosition
-            raPosition.x = raPosition.x + 0.07
-            raPosition.y = raPosition.y - 0.30
-            
-            var laPosition = lkPosition
-            laPosition.x = laPosition.x + 0.07
-            laPosition.y = laPosition.y - 0.30
-            
-            connections2.append(Connection2(one, two))
-            connections2.append(Connection2(one, rkPosition))
-            connections2.append(Connection2(two, lkPosition))
-            connections2.append(Connection2(rkPosition, raPosition))
-            connections2.append(Connection2(lkPosition, laPosition))
+//            var rkPosition = one
+//            rkPosition.y = rkPosition.y - 0.22
+//            rkPosition.x = rkPosition.x - 0.1
+//
+//            var lkPosition = two
+//            lkPosition.y = lkPosition.y - 0.22
+//            lkPosition.x = lkPosition.x + 0.0
+//
+//            var raPosition = rkPosition
+//            raPosition.x = raPosition.x + 0.07
+//            raPosition.y = raPosition.y - 0.30
+//
+//            var laPosition = lkPosition
+//            laPosition.x = laPosition.x + 0.07
+//            laPosition.y = laPosition.y - 0.30
+//
+//            connections2.append(Connection2(one, two))
+//            connections2.append(Connection2(one, rkPosition))
+//            connections2.append(Connection2(two, lkPosition))
+//            connections2.append(Connection2(rkPosition, raPosition))
+//            connections2.append(Connection2(lkPosition, laPosition))
         }
     }
+    
+    mutating func lungeSideRight(one: CGPoint, two: CGPoint){
+        var rkPosition = one
+        rkPosition.y = rkPosition.y - 0.22
+        rkPosition.x = rkPosition.x - 0.1
+        
+        var lkPosition = two
+        lkPosition.y = lkPosition.y - 0.22
+        lkPosition.x = lkPosition.x + 0.0
+        
+        var raPosition = rkPosition
+        raPosition.y = raPosition.y - 0.30
+        raPosition.x = raPosition.x + 0.07
+        
+        var laPosition = lkPosition
+        laPosition.y = laPosition.y - 0.30
+        laPosition.x = laPosition.x + 0.07
+     
+        
+        connections2.append(Connection2(one, two))
+        connections2.append(Connection2(one, rkPosition))
+        connections2.append(Connection2(two, lkPosition))
+        connections2.append(Connection2(rkPosition, raPosition))
+        connections2.append(Connection2(lkPosition, laPosition))
+    }
+    
+    mutating func lungeSideLeft(one: CGPoint, two: CGPoint){
+        var rkPosition = one
+        rkPosition.y = rkPosition.y - 0.22
+        rkPosition.x = rkPosition.x + 0.1
+        
+        var lkPosition = two
+        lkPosition.y = lkPosition.y - 0.22
+        lkPosition.x = lkPosition.x - 0.03
+        
+        var raPosition = rkPosition
+        raPosition.y = raPosition.y - 0.30
+        raPosition.x = raPosition.x - 0.09
+        
+        var laPosition = lkPosition
+        laPosition.y = laPosition.y - 0.30
+        laPosition.x = laPosition.x - 0.11
+    
+        
+        connections2.append(Connection2(one, two))
+        connections2.append(Connection2(one, rkPosition))
+        connections2.append(Connection2(two, lkPosition))
+        connections2.append(Connection2(rkPosition, raPosition))
+        connections2.append(Connection2(lkPosition, laPosition))
+    }
+    
+    
     
     static func areaEstimateOfLandmarks(_ landmarks: [Landmark]) -> CGFloat {
         let xCoordinates = landmarks.map { $0.location.x }
