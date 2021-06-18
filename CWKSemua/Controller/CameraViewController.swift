@@ -142,6 +142,8 @@ extension CameraViewController {
         let renderFormat = UIGraphicsImageRendererFormat()
         renderFormat.scale = 1.0
         
+        var actionLabel = self.actionLabel.text
+        
         let frameSize = CGSize(width: frame.width, height: frame.height)
         let poseRenderer = UIGraphicsImageRenderer(size: frameSize,
                                                    format: renderFormat)
@@ -161,28 +163,13 @@ extension CameraViewController {
                                                     y: frameSize.height)
             
             guard let poses = poses else { return }
+//            var poses = poses
             
             for pose in poses {
                 pose.drawWireframeToContext(cgContext, applying: pointTransform)
-                if self.actionLabel.text == "others" {
-                    print("tes other")
-                    pose.drawWireframeToContext2(cgContext, applying: pointTransform2, action: self.actionLabel.text!)
-                } else if self.actionLabel.text == "lunge-front-right" {
-                    print("tes lunge-front-right")
-                    pose.drawWireframeToContext2(cgContext, applying: pointTransform2, action: self.actionLabel.text!)
-                } else if self.actionLabel.text == "lunge-right" {
-                    print("tes lunge-right")
-                    pose.drawWireframeToContext2(cgContext, applying: pointTransform2, action: self.actionLabel.text!)
-                } else if self.actionLabel.text == "lunge-front-left" {
-                    print("tes lunge-front-left")
-                    pose.drawWireframeToContext2(cgContext, applying: pointTransform2, action: self.actionLabel.text!)
-                }  else if self.actionLabel.text == "lunge-left" {
-                    print("tes lunge-left")
-                    pose.drawWireframeToContext2(cgContext, applying: pointTransform2, action: self.actionLabel.text!)
-                } else {
-                    print("tes else")
-                    pose.drawWireframeToContext2(cgContext, applying: pointTransform2, action: self.actionLabel.text!)
-                }
+                
+                pose.drawWireframeToContext2(cgContext, applying: pointTransform2, action: actionLabel!)
+                
             }
         }
         
@@ -212,7 +199,7 @@ extension CameraViewController: VideoProcessingChainDelegate {
         }
         
         updateUILabelsWithPrediction(actionPrediction)
-        print("action prediction: \(actionPrediction.label)")
+        //        print("action prediction: \(actionPrediction.label)")
     }
     
     func videoProcessingChain(_ chain: VideoProcessingChain,
