@@ -53,7 +53,7 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
         videoView.setTwoGradient(width: videoView.frame.size.width, height: videoView.frame.size.height)
         view.layoutIfNeeded()
         
-        videoView.layer.cornerRadius = 10
+        videoView.layer.cornerRadius = 30
         
         
         
