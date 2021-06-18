@@ -29,8 +29,11 @@ extension FootworkClassifier {
 extension FootworkClassifier {
     /// Label Model
     enum Label: String, CaseIterable {
-        case lunge = "lunge"
-        case other = "other"
+        case lunge_front_right = "lunge-front-right"
+        case lunge_front_left = "lunge-front-left"
+        case lunge_right = "lunge-right"
+        case lunge_left = "lunge-left"
+        case others = "others"
 
         init(_ string: String) {
             guard let label = Label(rawValue: string) else {
