@@ -52,6 +52,20 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        // Update the device's orientation.
+        videoCapture.updateDeviceOrientation()
+    }
+
+    /// Notifies the video capture when the device rotates to a new orientation.
+    override func viewWillTransition(to size: CGSize,
+                                     with coordinator: UIViewControllerTransitionCoordinator) {
+        // Update the the camera's orientation to match the device's.
+        videoCapture.updateDeviceOrientation()
+    }
+    
     @IBAction func buttonOnClick(_ sender: UIButton) {
         
         if !recordEngga {

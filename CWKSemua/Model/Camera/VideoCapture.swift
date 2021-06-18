@@ -47,9 +47,9 @@ class VideoCapture: NSObject {
         switch currentPhysicalOrientation {
 
         case .portrait, .faceUp, .faceDown, .unknown:
-            orientation = .portrait
+            orientation = .landscapeLeft
         case .portraitUpsideDown:
-            orientation = .portraitUpsideDown
+            orientation = .portrait
         case .landscapeLeft:
             orientation = .landscapeRight
         case .landscapeRight:
