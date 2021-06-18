@@ -36,7 +36,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         super.viewDidLoad()
         
         UIApplication.shared.isIdleTimerDisabled = true
-
+        
         let value = UIInterfaceOrientation.landscapeRight.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
         
@@ -44,11 +44,13 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         
         videoProcessingChain = VideoProcessingChain()
         videoProcessingChain.delegate = self
-
+        
         videoCapture = VideoCapture()
         videoCapture.delegate = self
+        
         updateUILabelsWithPrediction(.startingPrediction)
-    
+        
+        
     }
         
     @IBAction func buttonOnClick(_ sender: UIButton) {
@@ -63,7 +65,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         }
         print("button pressed")
     }
-
+    
     
     func videoQueue() -> DispatchQueue {
         return DispatchQueue.main
@@ -116,8 +118,8 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     }
     
     override var shouldAutorotate: Bool {
-         return false
-     }
+        return false
+    }
     
 }
 
@@ -125,13 +127,13 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 extension CameraViewController {
     private func addFrameCount(_ frameCount: Int, to actionLabel: String) {
         let totalFrames = (actionFrameCounts[actionLabel] ?? 0) + frameCount
-
+        
         actionFrameCounts[actionLabel] = totalFrames
     }
     
     private func updateUILabelsWithPrediction(_ prediction: ActionPrediction) {
         DispatchQueue.main.async { self.actionLabel.text = prediction.label }
-
+        
         let confidenceString = prediction.confidenceString ?? "Observing..."
         DispatchQueue.main.async { self.confidenceLabel.text = confidenceString }
     }
@@ -139,36 +141,41 @@ extension CameraViewController {
     private func drawPoses(_ poses: [Pose]?, onto frame: CGImage) {
         let renderFormat = UIGraphicsImageRendererFormat()
         renderFormat.scale = 1.0
-
+        
+        var actionLabel = self.actionLabel.text
+        
         let frameSize = CGSize(width: frame.width, height: frame.height)
         let poseRenderer = UIGraphicsImageRenderer(size: frameSize,
                                                    format: renderFormat)
-
+        
         let frameWithPosesRendering = poseRenderer.image { rendererContext in
             let cgContext = rendererContext.cgContext
             let inverse = cgContext.ctm.inverted()
-
+            
             cgContext.concatenate(inverse)
-
+            
             let imageRectangle = CGRect(origin: .zero, size: frameSize)
             cgContext.draw(frame, in: imageRectangle)
             
             let pointTransform = CGAffineTransform(scaleX: frameSize.width,
                                                    y: frameSize.height)
             let pointTransform2 = CGAffineTransform(scaleX: frameSize.width+100,
-                                                   y: frameSize.height)
-
+                                                    y: frameSize.height)
+            
             guard let poses = poses else { return }
-
+//            var poses = poses
+            
             for pose in poses {
                 pose.drawWireframeToContext(cgContext, applying: pointTransform)
-                pose.drawWireframeToContext2(cgContext, applying: pointTransform2)
+                
+                pose.drawWireframeToContext2(cgContext, applying: pointTransform2, action: actionLabel!)
+                
             }
         }
-
-
+        
+        
         DispatchQueue.main.async { self.imageView.image = frameWithPosesRendering }
-
+        
     }
 }
 
@@ -186,14 +193,15 @@ extension CameraViewController: VideoProcessingChainDelegate {
     func videoProcessingChain(_ chain: VideoProcessingChain,
                               didPredict actionPrediction: ActionPrediction,
                               for frameCount: Int) {
-
+        
         if actionPrediction.isModelLabel {
             addFrameCount(frameCount, to: actionPrediction.label)
         }
-
+        
         updateUILabelsWithPrediction(actionPrediction)
+        //        print("action prediction: \(actionPrediction.label)")
     }
-
+    
     func videoProcessingChain(_ chain: VideoProcessingChain,
                               didDetect poses: [Pose]?,
                               in frame: CGImage) {
@@ -233,7 +241,7 @@ extension CameraViewController: UIImagePickerControllerDelegate{
                 self.performSegue(withIdentifier: "showVideo", sender: self.outputURL)
             }
             self.recordEngga = false
-           
+            
             
         }
     }
