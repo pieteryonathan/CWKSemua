@@ -19,13 +19,13 @@
 		5BE53E6E266E1D280049BBF8 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE53E6D266E1D280049BBF8 /* HomePageViewController.swift */; };
 		5BE53E70266E1DF70049BBF8 /* GradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE53E6F266E1DF70049BBF8 /* GradientColor.swift */; };
 		5BF56E532670A26F00191575 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF56E522670A26F00191575 /* ViewController.swift */; };
+		A70901BA267C487900570C1C /* FootworkClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A70901B9267C487900570C1C /* FootworkClassifier.mlmodel */; };
 		A7CF21D2267341C1007B54F9 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7CF21D1267341C1007B54F9 /* Camera.storyboard */; };
 		A7D088F8266F42370044AB95 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D088F7266F42370044AB95 /* DetailViewController.swift */; };
 		A7EA82BB2672DF8A0032CAA7 /* AVCaptureDeviceFrameRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA82BA2672DF8A0032CAA7 /* AVCaptureDeviceFrameRate.swift */; };
 		A7EA82BF2672DFB30032CAA7 /* AVCaptureDeviceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA82BE2672DFB30032CAA7 /* AVCaptureDeviceInput.swift */; };
 		A7EA82C22672DFCC0032CAA7 /* AVCaptureVideoDataOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA82C12672DFCC0032CAA7 /* AVCaptureVideoDataOutput.swift */; };
 		A7EA82C62672E04A0032CAA7 /* Pose.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA82C52672E04A0032CAA7 /* Pose.swift */; };
-		A7EA82CB2672E5050032CAA7 /* FootworkClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A7EA82CA2672E5050032CAA7 /* FootworkClassifier.mlmodel */; };
 		A7EA82CE2672E6250032CAA7 /* FootworkClassifierLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA82CD2672E6250032CAA7 /* FootworkClassifierLabel.swift */; };
 		A7EA82D22672E82B0032CAA7 /* FootworkClassifierPredict.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA82D12672E82B0032CAA7 /* FootworkClassifierPredict.swift */; };
 		A7EA82D52672EB250032CAA7 /* FootworkPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA82D42672EB250032CAA7 /* FootworkPrediction.swift */; };
@@ -56,13 +56,13 @@
 		5BE53E6D266E1D280049BBF8 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		5BE53E6F266E1DF70049BBF8 /* GradientColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientColor.swift; sourceTree = "<group>"; };
 		5BF56E522670A26F00191575 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A70901B9267C487900570C1C /* FootworkClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FootworkClassifier.mlmodel; sourceTree = "<group>"; };
 		A7CF21D1267341C1007B54F9 /* Camera.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		A7D088F7266F42370044AB95 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A7EA82BA2672DF8A0032CAA7 /* AVCaptureDeviceFrameRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureDeviceFrameRate.swift; sourceTree = "<group>"; };
 		A7EA82BE2672DFB30032CAA7 /* AVCaptureDeviceInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureDeviceInput.swift; sourceTree = "<group>"; };
 		A7EA82C12672DFCC0032CAA7 /* AVCaptureVideoDataOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureVideoDataOutput.swift; sourceTree = "<group>"; };
 		A7EA82C52672E04A0032CAA7 /* Pose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pose.swift; sourceTree = "<group>"; };
-		A7EA82CA2672E5050032CAA7 /* FootworkClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FootworkClassifier.mlmodel; sourceTree = "<group>"; };
 		A7EA82CD2672E6250032CAA7 /* FootworkClassifierLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootworkClassifierLabel.swift; sourceTree = "<group>"; };
 		A7EA82D12672E82B0032CAA7 /* FootworkClassifierPredict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootworkClassifierPredict.swift; sourceTree = "<group>"; };
 		A7EA82D42672EB250032CAA7 /* FootworkPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootworkPrediction.swift; sourceTree = "<group>"; };
@@ -92,8 +92,6 @@
 		5B9A7DEB266D06A7008053F9 = {
 			isa = PBXGroup;
 			children = (
-				AB6DCD2E2677683200B0693C /* History+CoreDataClass.swift */,
-				AB6DCD2F2677683200B0693C /* History+CoreDataProperties.swift */,
 				5B9A7DF6266D06A7008053F9 /* CWKSemua */,
 				5B9A7DF5266D06A7008053F9 /* Products */,
 			);
@@ -113,25 +111,6 @@
 				5BE53E66266E07210049BBF8 /* Controller */,
 				5BE53E65266E071C0049BBF8 /* View */,
 				5BE53E64266E07150049BBF8 /* Model */,
-				5B9A7DF7266D06A7008053F9 /* AppDelegate.swift */,
-				5B9A7DF9266D06A7008053F9 /* SceneDelegate.swift */,
-				A7FC63D5266E67A500859CC0 /* CameraViewController.swift */,
-				5BF56E522670A26F00191575 /* ViewController.swift */,
-				A7EA82D72672EFB40032CAA7 /* Video Processing */,
-				A7EA82C92672E4970032CAA7 /* Footwork Classifier */,
-				A7EA82C42672E0390032CAA7 /* ModelPose */,
-				A7EA82B92672DF0E0032CAA7 /* Camera */,
-				A7FC642F266EE80D00859CC0 /* VideoPlaybackViewController.swift */,
-				A7D088F7266F42370044AB95 /* DetailViewController.swift */,
-				A7CF21D1267341C1007B54F9 /* Camera.storyboard */,
-				5B9A7DFD266D06A7008053F9 /* Main.storyboard */,
-				AB6DCD362679127B00B0693C /* HistoryCollectionViewCell.swift */,
-				AB6DCD372679127B00B0693C /* HistoryCollectionViewCell.xib */,
-				AB6DCD3426790FFA00B0693C /* HStestingViewController.swift */,
-				AB6DCD322678E79500B0693C /* HistoryTesting.swift */,
-				5BBFF36C266F5ACF0003EBEB /* PageViewController.storyboard */,
-				5BBFF36E266F5BE10003EBEB /* PageViewController.swift */,
-				5BE53E5F266DE6D20049BBF8 /* Landscape.storyboard */,
 				5B9A7E03266D06A8008053F9 /* Assets.xcassets */,
 				5B9A7E05266D06A8008053F9 /* LaunchScreen.storyboard */,
 				5B9A7E08266D06A8008053F9 /* Info.plist */,
@@ -143,6 +122,16 @@
 		5BE53E64266E07150049BBF8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5B9A7DF7266D06A7008053F9 /* AppDelegate.swift */,
+				5BE53E6F266E1DF70049BBF8 /* GradientColor.swift */,
+				5B9A7DF9266D06A7008053F9 /* SceneDelegate.swift */,
+				AB6DCD2E2677683200B0693C /* History+CoreDataClass.swift */,
+				AB6DCD2F2677683200B0693C /* History+CoreDataProperties.swift */,
+				AB6DCD322678E79500B0693C /* HistoryTesting.swift */,
+				A7EA82B92672DF0E0032CAA7 /* Camera */,
+				A7EA82D72672EFB40032CAA7 /* Video Processing */,
+				A7EA82C92672E4970032CAA7 /* Footwork Classifier */,
+				A7EA82C42672E0390032CAA7 /* ModelPose */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -150,8 +139,11 @@
 		5BE53E65266E071C0049BBF8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5BE53E6D266E1D280049BBF8 /* HomePageViewController.swift */,
-				5BE53E6F266E1DF70049BBF8 /* GradientColor.swift */,
+				A7CF21D1267341C1007B54F9 /* Camera.storyboard */,
+				5B9A7DFD266D06A7008053F9 /* Main.storyboard */,
+				5BBFF36C266F5ACF0003EBEB /* PageViewController.storyboard */,
+				5BE53E5F266DE6D20049BBF8 /* Landscape.storyboard */,
+				AB6DCD372679127B00B0693C /* HistoryCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,6 +151,14 @@
 		5BE53E66266E07210049BBF8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5BF56E522670A26F00191575 /* ViewController.swift */,
+				5BE53E6D266E1D280049BBF8 /* HomePageViewController.swift */,
+				A7FC63D5266E67A500859CC0 /* CameraViewController.swift */,
+				A7D088F7266F42370044AB95 /* DetailViewController.swift */,
+				A7FC642F266EE80D00859CC0 /* VideoPlaybackViewController.swift */,
+				AB6DCD362679127B00B0693C /* HistoryCollectionViewCell.swift */,
+				AB6DCD3426790FFA00B0693C /* HStestingViewController.swift */,
+				5BBFF36E266F5BE10003EBEB /* PageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -185,7 +185,7 @@
 		A7EA82C92672E4970032CAA7 /* Footwork Classifier */ = {
 			isa = PBXGroup;
 			children = (
-				A7EA82CA2672E5050032CAA7 /* FootworkClassifier.mlmodel */,
+				A70901B9267C487900570C1C /* FootworkClassifier.mlmodel */,
 				A7EA82CD2672E6250032CAA7 /* FootworkClassifierLabel.swift */,
 				A7EA82D12672E82B0032CAA7 /* FootworkClassifierPredict.swift */,
 				A7EA82D42672EB250032CAA7 /* FootworkPrediction.swift */,
@@ -280,7 +280,6 @@
 				AB6DCD3526790FFA00B0693C /* HStestingViewController.swift in Sources */,
 				AB6DCD382679127B00B0693C /* HistoryCollectionViewCell.swift in Sources */,
 				5BBFF36F266F5BE10003EBEB /* PageViewController.swift in Sources */,
-				A7EA82CB2672E5050032CAA7 /* FootworkClassifier.mlmodel in Sources */,
 				A7EA82CE2672E6250032CAA7 /* FootworkClassifierLabel.swift in Sources */,
 				5BE53E70266E1DF70049BBF8 /* GradientColor.swift in Sources */,
 				AB6DCD312677683200B0693C /* History+CoreDataProperties.swift in Sources */,
@@ -298,6 +297,7 @@
 				A7EA82C22672DFCC0032CAA7 /* AVCaptureVideoDataOutput.swift in Sources */,
 				A7D088F8266F42370044AB95 /* DetailViewController.swift in Sources */,
 				A7EA82D22672E82B0032CAA7 /* FootworkClassifierPredict.swift in Sources */,
+				A70901BA267C487900570C1C /* FootworkClassifier.mlmodel in Sources */,
 				A7FC6430266EE80D00859CC0 /* VideoPlaybackViewController.swift in Sources */,
 				5B9A7DFA266D06A7008053F9 /* SceneDelegate.swift in Sources */,
 			);
@@ -447,7 +447,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4QJD99HSU3;
+				DEVELOPMENT_TEAM = SS6XWJ44B6;
 				INFOPLIST_FILE = CWKSemua/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -466,7 +466,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4QJD99HSU3;
+				DEVELOPMENT_TEAM = SS6XWJ44B6;
 				INFOPLIST_FILE = CWKSemua/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

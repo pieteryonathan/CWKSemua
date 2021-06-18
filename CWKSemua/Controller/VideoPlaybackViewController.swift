@@ -42,7 +42,7 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
             self.thumbnail.image = thumbImage
         }
         
-            let value = UIInterfaceOrientation.landscapeLeft.rawValue
+            let value = UIInterfaceOrientation.landscapeRight.rawValue
             UIDevice.current.setValue(value, forKey: "orientation")
 
             avPlayerLayer = AVPlayerLayer(player: avPlayer)
@@ -53,7 +53,7 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
         videoView.setTwoGradient(width: videoView.frame.size.width, height: videoView.frame.size.height)
         view.layoutIfNeeded()
         
-        videoView.layer.cornerRadius = 10
+        videoView.layer.cornerRadius = 30
         
         
         
@@ -69,7 +69,6 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
         let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "History", in: context)
         let newHistory = History(entity: entity!, insertInto: context)
-        
         newHistory.videoId = historys.count as NSNumber
         newHistory.videoLink = videoURL.absoluteString
         newHistory.videoDate = Date()
@@ -104,6 +103,8 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
             self.view.window?.rootViewController?.dismiss(animated: true, completion: {
                 print("testing")
                 self.delegate?.dismiss()
+                let value = UIInterfaceOrientation.portrait.rawValue
+                UIDevice.current.setValue(value, forKey: "orientation")
             })
             
             
@@ -122,11 +123,12 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
         videoplayer.player = player
         self.present(videoplayer, animated: true) {
             videoplayer.player!.play()
-            
+        
             //        avPlayer.replaceCurrentItem(with: playerItem)
             //        avPlayer.play()
         }
     }
+    
 
     
     func getThumbnailImageFromVideoUrl(url: URL, completion: @escaping ((_ image: UIImage?)->Void)) {
@@ -148,6 +150,14 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
                 }
             }
         }
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+        return .landscapeRight
+    }
+    
+    override var shouldAutorotate: Bool {
+        return false
     }
     
 }

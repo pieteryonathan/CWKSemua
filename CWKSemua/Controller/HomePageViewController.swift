@@ -12,12 +12,20 @@ class HomePageViewController: UIViewController {
     @IBOutlet weak var frontcourttrainingbutton: UIButton!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+            super.viewDidLoad()
+        }
         
-       //deleteDataPlan()
-
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
     }
+    
+    override var shouldAutorotate: Bool {
+        return false
+      }
+        
 
+    
 }
 
 func deleteDataPlan(){
@@ -40,3 +48,17 @@ func deleteDataPlan(){
     }
 
     }
+
+extension UINavigationController{
+    open override var shouldAutorotate: Bool {
+        return false
+      }
+}
+
+extension UITabBarController{
+    open override var shouldAutorotate: Bool {
+        return false
+      }
+}
+
+
