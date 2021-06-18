@@ -12,20 +12,19 @@ class HomePageViewController: UIViewController {
     @IBOutlet weak var frontcourttrainingbutton: UIButton!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+            super.viewDidLoad()
+        }
         
-       //deleteDataPlan()
-
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        UIDevice.current.setValue((UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
-    }
-
-    override open var shouldAutorotate: Bool{
+    override var shouldAutorotate: Bool {
         return false
-    }
+      }
+        
+
     
 }
 
@@ -51,20 +50,15 @@ func deleteDataPlan(){
     }
 
 extension UINavigationController{
-    func shouldAutorotate() -> Bool {
-    if !viewControllers.isEmpty {
-
-      // Check if this ViewController is the one you want to disable roration on
-        if topViewController!.isKind(of: HomePageViewController.self){
-
-        // If true return false to disable it
+    open override var shouldAutorotate: Bool {
         return false
       }
-    }
+}
 
-    // Else normal rotation enabled
-    return false
-    }
+extension UITabBarController{
+    open override var shouldAutorotate: Bool {
+        return false
+      }
 }
 
 
