@@ -77,5 +77,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+//    var blockRotation = false
+//
+//    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+//        if blockRotation == true {
+//            return .portrait
+//        }
+//        return .landscapeRight
+//    }
+    
 }
 
