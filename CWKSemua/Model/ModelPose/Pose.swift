@@ -172,10 +172,6 @@ extension Pose {
             guard let one = jointLocations[VNHumanBodyPoseObservation.JointName(rawValue: VNRecognizedPointKey(rawValue: "right_upLeg_joint") )] else { continue }
             guard let two = jointLocations[VNHumanBodyPoseObservation.JointName(rawValue: VNRecognizedPointKey(rawValue: "left_upLeg_joint") )] else { continue }
             
-//                guard let one = jointLocations[jointPair.joint1] else { continue }
-//                guard let two = jointLocations[jointPair.joint2] else { continue }
-//            guard let sone = jointLocations[jointPair.joint1] + 20 else { continue }
-//            guard let stwo = jointLocations[jointPair.joint2] + 20 else { continue }
             
             print("joint 1 x:\(one.x)")
             print("joint 1 y:\(one.y)")
@@ -184,33 +180,10 @@ extension Pose {
             print("cek hasil: \(jointPair.joint1)")
             print("cek hasil2: \(jointPair.joint2)")
             
-//          Call functino suggestion pose
+//          Call function suggestion pose
 //            lungeSideRight(one: one, two: two)
             lungeSideLeft(one: one, two: two)
             
-            
-//            connections2.append(Connection2(jointLocations[Pose.jointPairsBottomOnly[0]]))
-//            var rkPosition = one
-//            rkPosition.y = rkPosition.y - 0.22
-//            rkPosition.x = rkPosition.x - 0.1
-//
-//            var lkPosition = two
-//            lkPosition.y = lkPosition.y - 0.22
-//            lkPosition.x = lkPosition.x + 0.0
-//
-//            var raPosition = rkPosition
-//            raPosition.x = raPosition.x + 0.07
-//            raPosition.y = raPosition.y - 0.30
-//
-//            var laPosition = lkPosition
-//            laPosition.x = laPosition.x + 0.07
-//            laPosition.y = laPosition.y - 0.30
-//
-//            connections2.append(Connection2(one, two))
-//            connections2.append(Connection2(one, rkPosition))
-//            connections2.append(Connection2(two, lkPosition))
-//            connections2.append(Connection2(rkPosition, raPosition))
-//            connections2.append(Connection2(lkPosition, laPosition))
         }
     }
     
