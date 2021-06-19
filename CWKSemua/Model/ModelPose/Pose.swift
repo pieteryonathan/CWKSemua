@@ -84,14 +84,15 @@ class Pose {
         guard let lhNew = lh else{return}
         print("rh: \(rh) lh:\(lh)")
         
+        
         if action == "lunge-right" {
             lungeSideRight(one: rhNew, two: lhNew)
         } else if action == "lunge-front-right" {
-            lungeSideRight(one: rhNew, two: lhNew)
+            lungeFrontRight(one: rhNew, two: lhNew)
         }
         else if action == "lunge-front-left" {
             
-            lungeSideLeft(one: rhNew, two: lhNew)
+            lungeFrontLeft(one: rhNew, two: lhNew)
         }
         else if action == "lunge-left" {
             lungeSideLeft(one: rhNew, two: lhNew)
@@ -189,7 +190,6 @@ extension Pose {
         //          Call function suggestion pose
         //            lungeSideRight(one: one, two: two)
         //            lungeSideLeft(one: rh, two: lh)
-        
         //        }
     }
     
@@ -252,7 +252,58 @@ extension Pose {
         connections2.append(Connection2(lkPosition, laPosition))
     }
     
+    func lungeFrontLeft(one: CGPoint, two: CGPoint){
+        var rkPosition = one
+        rkPosition.y = rkPosition.y - 0.22
+        rkPosition.x = rkPosition.x + 0.1
+        
+        var lkPosition = two
+        lkPosition.y = lkPosition.y - 0.22
+        lkPosition.x = lkPosition.x - 0.07
+        
+        var raPosition = rkPosition
+        raPosition.y = raPosition.y - 0.30
+        raPosition.x = raPosition.x - 0.09
+        
+        var laPosition = lkPosition
+        laPosition.y = laPosition.y - 0.30
+        laPosition.x = laPosition.x - 0.11
+        
+        
+        
+        connections2 = [Connection2]()
+        
+        connections2.append(Connection2(one, two))
+        connections2.append(Connection2(one, rkPosition))
+        connections2.append(Connection2(two, lkPosition))
+        connections2.append(Connection2(rkPosition, raPosition))
+        connections2.append(Connection2(lkPosition, laPosition))
+    }
     
+    func lungeFrontRight(one: CGPoint, two: CGPoint){
+        var rkPosition = one
+        rkPosition.y = rkPosition.y - 0.22
+        rkPosition.x = rkPosition.x - 0.08
+        
+        var lkPosition = two
+        lkPosition.y = lkPosition.y - 0.22
+        lkPosition.x = lkPosition.x + 0.0
+        
+        var raPosition = rkPosition
+        raPosition.y = raPosition.y - 0.30
+        raPosition.x = raPosition.x + 0.05
+        
+        var laPosition = lkPosition
+        laPosition.y = laPosition.y - 0.30
+        laPosition.x = laPosition.x + 0.07
+        connections2 = [Connection2]()
+        
+        connections2.append(Connection2(one, two))
+        connections2.append(Connection2(one, rkPosition))
+        connections2.append(Connection2(two, lkPosition))
+        connections2.append(Connection2(rkPosition, raPosition))
+        connections2.append(Connection2(lkPosition, laPosition))
+    }
     
     static func areaEstimateOfLandmarks(_ landmarks: [Landmark]) -> CGFloat {
         let xCoordinates = landmarks.map { $0.location.x }
