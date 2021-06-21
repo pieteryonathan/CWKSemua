@@ -13,6 +13,7 @@ class HomePageViewController: UIViewController {
     
     override func viewDidLoad() {
             super.viewDidLoad()
+        deleteDataPlan()
         let value = UIInterfaceOrientation.portrait.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
         

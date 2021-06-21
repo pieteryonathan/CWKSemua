@@ -11,7 +11,7 @@ import AVFoundation
 import AVKit
 
 class HStestingViewController: UIViewController {
-
+    
     var historys = [History]()
     var firstLoad = true
     let avPlayer = AVPlayer()
@@ -27,22 +27,23 @@ class HStestingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let xib = UINib(nibName: "\(HistoryCollectionViewCell.self)", bundle: nil)
         testingCollection.register(xib, forCellWithReuseIdentifier: "hstestingCell")
         
         if (firstLoad) {
             firstLoad = false
-        }
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
-        
-        do{
-            historys = try context.fetch(History.fetchRequest())
-            testingCollection.reloadData()
-        }
-        catch{
             
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+            
+            do{
+                historys = try context.fetch(History.fetchRequest())
+                testingCollection.reloadData()
+            }
+            catch{
+                
+            }
         }
         
         
@@ -52,8 +53,8 @@ class HStestingViewController: UIViewController {
         historyFullScreen.layer.insertSublayer(avPlayerLayer, at: 0)
         
         
-      
-    
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,7 +66,7 @@ class HStestingViewController: UIViewController {
         print("view did appeaar")
         testingCollection.reloadData()
     }
-
+    
 }
 
 extension HStestingViewController: UICollectionViewDelegate, UICollectionViewDataSource{
@@ -88,7 +89,7 @@ extension HStestingViewController: UICollectionViewDelegate, UICollectionViewDat
         getThumbnailImageFromVideoUrl(url: fileURL) { (result) in
             cell.imageViewThumbnail.image = result
         }
-    
+        
         return cell
     }
     
@@ -115,25 +116,25 @@ func dateToString(date: Date) -> String {
 
 
 func getThumbnailImageFromVideoUrl(url: URL, completion: @escaping ((_ image: UIImage?)->Void)) {
-       DispatchQueue.global().async { //1
-           let asset = AVAsset(url: url) //2
-           let avAssetImageGenerator = AVAssetImageGenerator(asset: asset) //3
-           avAssetImageGenerator.appliesPreferredTrackTransform = true //4
-           let thumnailTime = CMTimeMake(value: 2, timescale: 1) //5
-           do {
-               let cgThumbImage = try avAssetImageGenerator.copyCGImage(at: thumnailTime, actualTime: nil) //6
-               let thumbImage = UIImage(cgImage: cgThumbImage) //7
-               DispatchQueue.main.async { //8
-                   completion(thumbImage) //9
-               }
-           } catch {
-               print(error.localizedDescription) //10
-               DispatchQueue.main.async {
-                   completion(nil) //11
-               }
-           }
-       }
-   }
+    DispatchQueue.global().async { //1
+        let asset = AVAsset(url: url) //2
+        let avAssetImageGenerator = AVAssetImageGenerator(asset: asset) //3
+        avAssetImageGenerator.appliesPreferredTrackTransform = true //4
+        let thumnailTime = CMTimeMake(value: 2, timescale: 1) //5
+        do {
+            let cgThumbImage = try avAssetImageGenerator.copyCGImage(at: thumnailTime, actualTime: nil) //6
+            let thumbImage = UIImage(cgImage: cgThumbImage) //7
+            DispatchQueue.main.async { //8
+                completion(thumbImage) //9
+            }
+        } catch {
+            print(error.localizedDescription) //10
+            DispatchQueue.main.async {
+                completion(nil) //11
+            }
+        }
+    }
+}
 //
 //self.getThumbnailImageFromVideoUrl(url: URL) { (thumbImage) in
 //    self.thumbnail.image = thumbImage}

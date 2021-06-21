@@ -142,7 +142,9 @@ extension CameraViewController {
         let renderFormat = UIGraphicsImageRendererFormat()
         renderFormat.scale = 1.0
         
-        var actionLabel = self.actionLabel.text
+      
+            var actionLabel = self.actionLabel.text
+        
         
         let frameSize = CGSize(width: frame.width, height: frame.height)
         let poseRenderer = UIGraphicsImageRenderer(size: frameSize,
