@@ -35,23 +35,26 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var fullScreen: UIView!
     
     override func viewDidLoad() {
-
-            super.viewDidLoad()
-
-            self.getThumbnailImageFromVideoUrl(url: videoURL) { (thumbImage) in
+        
+        super.viewDidLoad()
+        
+        self.getThumbnailImageFromVideoUrl(url: videoURL) { (thumbImage) in
             self.thumbnail.image = thumbImage
         }
         
-            let value = UIInterfaceOrientation.landscapeRight.rawValue
-            UIDevice.current.setValue(value, forKey: "orientation")
-
-            avPlayerLayer = AVPlayerLayer(player: avPlayer)
-            avPlayerLayer.frame = fullScreen.bounds
-            avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-            fullScreen.layer.insertSublayer(avPlayerLayer, at: 0)
-            videoView.layer.cornerRadius = 30
-        videoView.setTwoGradient(width: videoView.frame.size.width, height: videoView.frame.size.height)
-        view.layoutIfNeeded()
+        let value = UIInterfaceOrientation.landscapeRight.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+        
+        avPlayerLayer = AVPlayerLayer(player: avPlayer)
+        avPlayerLayer.frame = fullScreen.bounds
+        avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        fullScreen.layer.insertSublayer(avPlayerLayer, at: 0)
+        videoView.layer.cornerRadius = 30
+        videoView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        thumbnail.layer.cornerRadius = 30
+        
+        //        videoView.setTwoGradient(width: videoView.frame.size.width, height: videoView.frame.size.height)
+        //        view.layoutIfNeeded()
         
         videoView.layer.cornerRadius = 30
         
@@ -84,7 +87,7 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
         
     }
     
-   
+    
     @IBAction func cancelButtonGotPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
         print("cancel kepencet")
@@ -117,19 +120,19 @@ class VideoPlaybackViewController: UIViewController, UIImagePickerControllerDele
     
     @IBAction func playButton(_ sender: Any) {
         videoView.isHidden = false
-//        let playerItem = AVPlayerItem(url: videoURL as URL)
+        //        let playerItem = AVPlayerItem(url: videoURL as URL)
         let player = AVPlayer(url: videoURL as URL)
         let videoplayer = AVPlayerViewController()
         videoplayer.player = player
         self.present(videoplayer, animated: true) {
             videoplayer.player!.play()
-        
+            
             //        avPlayer.replaceCurrentItem(with: playerItem)
             //        avPlayer.play()
         }
     }
     
-
+    
     
     func getThumbnailImageFromVideoUrl(url: URL, completion: @escaping ((_ image: UIImage?)->Void)) {
         DispatchQueue.global().async { //1
