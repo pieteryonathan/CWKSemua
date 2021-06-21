@@ -19,7 +19,6 @@
 		5BE53E6E266E1D280049BBF8 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE53E6D266E1D280049BBF8 /* HomePageViewController.swift */; };
 		5BE53E70266E1DF70049BBF8 /* GradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE53E6F266E1DF70049BBF8 /* GradientColor.swift */; };
 		5BF56E532670A26F00191575 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF56E522670A26F00191575 /* ViewController.swift */; };
-		A70901BA267C487900570C1C /* FootworkClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A70901B9267C487900570C1C /* FootworkClassifier.mlmodel */; };
 		A7CF21D2267341C1007B54F9 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7CF21D1267341C1007B54F9 /* Camera.storyboard */; };
 		A7D088F8266F42370044AB95 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D088F7266F42370044AB95 /* DetailViewController.swift */; };
 		A7EA82BB2672DF8A0032CAA7 /* AVCaptureDeviceFrameRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA82BA2672DF8A0032CAA7 /* AVCaptureDeviceFrameRate.swift */; };
@@ -30,6 +29,7 @@
 		A7EA82D22672E82B0032CAA7 /* FootworkClassifierPredict.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA82D12672E82B0032CAA7 /* FootworkClassifierPredict.swift */; };
 		A7EA82D52672EB250032CAA7 /* FootworkPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA82D42672EB250032CAA7 /* FootworkPrediction.swift */; };
 		A7EA82D92672EFDB0032CAA7 /* VideoProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EA82D82672EFDB0032CAA7 /* VideoProcessing.swift */; };
+		A7EB22C02680597700047496 /* FootworkClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A7EB22BF2680597700047496 /* FootworkClassifier.mlmodel */; };
 		A7FC63D6266E67A500859CC0 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FC63D5266E67A500859CC0 /* CameraViewController.swift */; };
 		A7FC63D9266E68FB00859CC0 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FC63D8266E68FB00859CC0 /* VideoCapture.swift */; };
 		A7FC6430266EE80D00859CC0 /* VideoPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FC642F266EE80D00859CC0 /* VideoPlaybackViewController.swift */; };
@@ -56,7 +56,6 @@
 		5BE53E6D266E1D280049BBF8 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		5BE53E6F266E1DF70049BBF8 /* GradientColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientColor.swift; sourceTree = "<group>"; };
 		5BF56E522670A26F00191575 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A70901B9267C487900570C1C /* FootworkClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FootworkClassifier.mlmodel; sourceTree = "<group>"; };
 		A7CF21D1267341C1007B54F9 /* Camera.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		A7D088F7266F42370044AB95 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A7EA82BA2672DF8A0032CAA7 /* AVCaptureDeviceFrameRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureDeviceFrameRate.swift; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		A7EA82D12672E82B0032CAA7 /* FootworkClassifierPredict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootworkClassifierPredict.swift; sourceTree = "<group>"; };
 		A7EA82D42672EB250032CAA7 /* FootworkPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootworkPrediction.swift; sourceTree = "<group>"; };
 		A7EA82D82672EFDB0032CAA7 /* VideoProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoProcessing.swift; sourceTree = "<group>"; };
+		A7EB22BF2680597700047496 /* FootworkClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = FootworkClassifier.mlmodel; path = ../../../../FootworkClassifier.mlmodel; sourceTree = "<group>"; };
 		A7FC63D5266E67A500859CC0 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		A7FC63D8266E68FB00859CC0 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 		A7FC642F266EE80D00859CC0 /* VideoPlaybackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlaybackViewController.swift; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 		A7EA82C92672E4970032CAA7 /* Footwork Classifier */ = {
 			isa = PBXGroup;
 			children = (
-				A70901B9267C487900570C1C /* FootworkClassifier.mlmodel */,
+				A7EB22BF2680597700047496 /* FootworkClassifier.mlmodel */,
 				A7EA82CD2672E6250032CAA7 /* FootworkClassifierLabel.swift */,
 				A7EA82D12672E82B0032CAA7 /* FootworkClassifierPredict.swift */,
 				A7EA82D42672EB250032CAA7 /* FootworkPrediction.swift */,
@@ -277,6 +277,7 @@
 			files = (
 				A7EA82D92672EFDB0032CAA7 /* VideoProcessing.swift in Sources */,
 				A7FC63D9266E68FB00859CC0 /* VideoCapture.swift in Sources */,
+				A7EB22C02680597700047496 /* FootworkClassifier.mlmodel in Sources */,
 				AB6DCD3526790FFA00B0693C /* HStestingViewController.swift in Sources */,
 				AB6DCD382679127B00B0693C /* HistoryCollectionViewCell.swift in Sources */,
 				5BBFF36F266F5BE10003EBEB /* PageViewController.swift in Sources */,
@@ -297,7 +298,6 @@
 				A7EA82C22672DFCC0032CAA7 /* AVCaptureVideoDataOutput.swift in Sources */,
 				A7D088F8266F42370044AB95 /* DetailViewController.swift in Sources */,
 				A7EA82D22672E82B0032CAA7 /* FootworkClassifierPredict.swift in Sources */,
-				A70901BA267C487900570C1C /* FootworkClassifier.mlmodel in Sources */,
 				A7FC6430266EE80D00859CC0 /* VideoPlaybackViewController.swift in Sources */,
 				5B9A7DFA266D06A7008053F9 /* SceneDelegate.swift in Sources */,
 			);
@@ -447,7 +447,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 98QK38C4QU;
+				DEVELOPMENT_TEAM = SS6XWJ44B6;
 				INFOPLIST_FILE = CWKSemua/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

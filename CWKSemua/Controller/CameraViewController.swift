@@ -134,7 +134,7 @@ extension CameraViewController {
     private func updateUILabelsWithPrediction(_ prediction: ActionPrediction) {
         DispatchQueue.main.async { self.actionLabel.text = prediction.label }
         
-        let confidenceString = prediction.confidenceString ?? "Observing..."
+        let confidenceString = prediction.confidenceString ?? "Detecting Pose..."
         DispatchQueue.main.async { self.confidenceLabel.text = confidenceString }
     }
     
