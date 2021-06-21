@@ -6,21 +6,19 @@
 //
 
 import UIKit
+import AVKit
+
 
 class DetailViewController: UIViewController, DismissToMainDelegate {
   
-    
+    var playerLayer = AVPlayerLayer()
 
     @IBOutlet weak var descDetailLabel: UITextView!
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var beginButton: UIButton!
     
     
-    @IBAction func buttonPressed(){
-        
-        performSegue(withIdentifier: "toShowCamera", sender: self)
-        
-    }
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,15 +26,39 @@ class DetailViewController: UIViewController, DismissToMainDelegate {
         
         beginButton.setTwoGradient(width: beginButton.frame.size.width, height: beginButton.frame.size.height)
         // Do any additional setup after loading the view.
-        
-        
-       
+  
+        playVideo(kotakview: previewView)
     }
     
     func dismiss() {
         print("kena di DetailViewController")
         navigationController?.popViewController(animated: true)
         //dismiss(animated: true, completion: nil)
+    }
+    
+    private func playVideo(kotakview: UIView) {
+        guard let path = Bundle.main.path(forResource: "DescriptionVideo", ofType:"mov") else {
+            debugPrint("video not found")
+            return
+        }
+        let player = AVPlayer(url: URL(fileURLWithPath: path))
+        playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = kotakview.bounds
+        playerLayer.videoGravity = .resizeAspectFill
+        kotakview.layer.insertSublayer(playerLayer, at: 0)
+        playerLayer.masksToBounds = true
+        playerLayer.cornerRadius = 20
+        kotakview.layer.cornerRadius = 20
+     
+        
+        // Setup looping
+                player.actionAtItemEnd = .none
+                NotificationCenter.default.addObserver(self,
+                                                       selector: #selector(playerItemDidReachEnd(notification:)),
+                                                       name: .AVPlayerItemDidPlayToEndTime,
+                                                       object: player.currentItem)
+        
+        player.play()
     }
 
     
@@ -56,6 +78,16 @@ class DetailViewController: UIViewController, DismissToMainDelegate {
         }
     }
     
+    @IBAction func buttonPressed(){
+        
+        performSegue(withIdentifier: "toShowCamera", sender: self)
+        
+    }
     
+    @objc
+      func playerItemDidReachEnd(notification: Notification) {
+          playerLayer.player?.seek(to: CMTime.zero)
+      }
 
+    
 }

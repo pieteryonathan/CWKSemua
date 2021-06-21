@@ -108,6 +108,11 @@
                                     <constraint firstAttribute="height" constant="274" id="FbZ-Yb-Ppq"/>
                                     <constraint firstAttribute="width" constant="344" id="PKe-9J-7Ai"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="3Ft-3n-sqs">
                                 <rect key="frame" x="23" y="535" width="344" height="128"/>

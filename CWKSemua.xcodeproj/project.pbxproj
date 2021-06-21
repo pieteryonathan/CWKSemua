@@ -18,6 +18,7 @@
 		5BE53E60266DE6D20049BBF8 /* Landscape.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BE53E5F266DE6D20049BBF8 /* Landscape.storyboard */; };
 		5BE53E6E266E1D280049BBF8 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE53E6D266E1D280049BBF8 /* HomePageViewController.swift */; };
 		5BE53E70266E1DF70049BBF8 /* GradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE53E6F266E1DF70049BBF8 /* GradientColor.swift */; };
+		5BEBF4B6268083D100DFDCBB /* DescriptionVideo.mov in Resources */ = {isa = PBXBuildFile; fileRef = 5BEBF4B5268083D100DFDCBB /* DescriptionVideo.mov */; };
 		5BF56E532670A26F00191575 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF56E522670A26F00191575 /* ViewController.swift */; };
 		A7CF21D2267341C1007B54F9 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7CF21D1267341C1007B54F9 /* Camera.storyboard */; };
 		A7D088F8266F42370044AB95 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D088F7266F42370044AB95 /* DetailViewController.swift */; };
@@ -55,6 +56,7 @@
 		5BE53E5F266DE6D20049BBF8 /* Landscape.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Landscape.storyboard; sourceTree = "<group>"; };
 		5BE53E6D266E1D280049BBF8 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		5BE53E6F266E1DF70049BBF8 /* GradientColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientColor.swift; sourceTree = "<group>"; };
+		5BEBF4B5268083D100DFDCBB /* DescriptionVideo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = DescriptionVideo.mov; sourceTree = "<group>"; };
 		5BF56E522670A26F00191575 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A7CF21D1267341C1007B54F9 /* Camera.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		A7D088F7266F42370044AB95 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				5BE53E64266E07150049BBF8 /* Model */,
 				5B9A7E03266D06A8008053F9 /* Assets.xcassets */,
 				5B9A7E05266D06A8008053F9 /* LaunchScreen.storyboard */,
+				5BEBF4B5268083D100DFDCBB /* DescriptionVideo.mov */,
 				5B9A7E08266D06A8008053F9 /* Info.plist */,
 				5B9A7E00266D06A7008053F9 /* CWKSemua.xcdatamodeld */,
 			);
@@ -265,6 +268,7 @@
 				5BE53E60266DE6D20049BBF8 /* Landscape.storyboard in Resources */,
 				5B9A7DFF266D06A7008053F9 /* Main.storyboard in Resources */,
 				5BBFF36D266F5ACF0003EBEB /* PageViewController.storyboard in Resources */,
+				5BEBF4B6268083D100DFDCBB /* DescriptionVideo.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +451,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SS6XWJ44B6;
+				DEVELOPMENT_TEAM = 98QK38C4QU;
 				INFOPLIST_FILE = CWKSemua/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
