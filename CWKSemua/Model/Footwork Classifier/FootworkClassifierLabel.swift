@@ -31,9 +31,9 @@ extension FootworkClassifier {
     enum Label: String, CaseIterable {
         case lunge_front_right = "Lunge Front Right Pose"
         case lunge_front_left = "Lunge Front Left Pose"
-        case lunge_right = "Lunge Right"
-        case lunge_left = "Lunge Left"
-        case others = "other"
+        case lunge_right = "Lunge Right Pose"
+        case lunge_left = "Lunge Left Pose"
+        case others = "Other Pose"
 
         init(_ string: String) {
             guard let label = Label(rawValue: string) else {

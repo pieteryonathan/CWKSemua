@@ -85,7 +85,7 @@ class Pose {
         print("rh: \(rh) lh:\(lh)")
         
         
-        if action == "Lunge Right" {
+        if action == "Lunge Right Pose" {
             lungeSideRight(one: rhNew, two: lhNew)
         } else if action == "Lunge Front Right Pose" {
             lungeFrontRight(one: rhNew, two: lhNew)
@@ -94,10 +94,10 @@ class Pose {
             
             lungeFrontLeft(one: rhNew, two: lhNew)
         }
-        else if action == "Lunge Left" {
+        else if action == "Lunge Left Pose" {
             lungeSideLeft(one: rhNew, two: lhNew)
         } else {
-            print("other")
+            print("Other Pose")
         }
         
         let scale = drawingScale
