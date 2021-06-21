@@ -23,7 +23,7 @@ class VideoCapture: NSObject {
         didSet { createVideoFramePublisher() }
     }
     
-    var cameraPosition = AVCaptureDevice.Position.front {
+    var cameraPosition = AVCaptureDevice.Position.back {
         didSet { createVideoFramePublisher() }
     }
     

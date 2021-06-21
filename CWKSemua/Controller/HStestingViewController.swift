@@ -54,6 +54,14 @@ class HStestingViewController: UIViewController {
       
     
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        testingCollection.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        testingCollection.reloadData()
+    }
 
 }
 
