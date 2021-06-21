@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gTy-IP-fqZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gTy-IP-fqZ">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -77,15 +77,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG3" translatesAutoresizingMaskIntoConstraints="NO" id="L3z-6Z-Xx3">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esc-GS-VQx">
-                                <rect key="frame" x="23" y="173" width="344" height="268"/>
-                                <color key="backgroundColor" systemColor="systemGrayColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="3Ft-3n-sqs">
                                 <rect key="frame" x="23" y="559" width="344" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -116,16 +107,26 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Footwork Training" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="QJZ-Gy-0PQ">
-                                <rect key="frame" x="28" y="68" width="268" height="38.333333333333343"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Front Court Footwork" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="QJZ-Gy-0PQ">
+                                <rect key="frame" x="24" y="86.666666666666671" width="317.66666666666669" height="38.333333333333329"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esc-GS-VQx">
+                                <rect key="frame" x="23" y="173" width="344" height="268"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7zS-6T-Bcq"/>
                         <color key="backgroundColor" red="0.026413656769999998" green="0.1836847663" blue="0.2196135521" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="QJZ-Gy-0PQ" firstAttribute="leading" secondItem="7zS-6T-Bcq" secondAttribute="leading" constant="24" id="3Fw-op-BSu"/>
                             <constraint firstItem="esc-GS-VQx" firstAttribute="leading" secondItem="7zS-6T-Bcq" secondAttribute="leading" constant="23" id="3g7-oG-qXy"/>
                             <constraint firstItem="L3z-6Z-Xx3" firstAttribute="top" secondItem="hdg-Bx-JU3" secondAttribute="top" id="3vW-kZ-7mg"/>
                             <constraint firstItem="L3z-6Z-Xx3" firstAttribute="leading" secondItem="7zS-6T-Bcq" secondAttribute="leading" id="FBX-Q3-SSY"/>
@@ -134,8 +135,7 @@
                             <constraint firstItem="3Ft-3n-sqs" firstAttribute="top" secondItem="U1W-WT-6Cj" secondAttribute="bottom" constant="28" id="QL2-n9-Xs1"/>
                             <constraint firstAttribute="bottom" secondItem="L3z-6Z-Xx3" secondAttribute="bottom" id="SIj-sK-VOF"/>
                             <constraint firstItem="7zS-6T-Bcq" firstAttribute="trailing" secondItem="esc-GS-VQx" secondAttribute="trailing" constant="23" id="Ukj-dQ-syf"/>
-                            <constraint firstItem="esc-GS-VQx" firstAttribute="top" secondItem="QJZ-Gy-0PQ" secondAttribute="bottom" constant="66.670000000000002" id="Uuf-JF-v7g"/>
-                            <constraint firstItem="7zS-6T-Bcq" firstAttribute="trailing" secondItem="QJZ-Gy-0PQ" secondAttribute="trailing" constant="94" id="WKE-ah-Eqi"/>
+                            <constraint firstItem="esc-GS-VQx" firstAttribute="top" secondItem="QJZ-Gy-0PQ" secondAttribute="bottom" constant="48" id="Uuf-JF-v7g"/>
                             <constraint firstItem="7zS-6T-Bcq" firstAttribute="trailing" secondItem="egL-F3-qXK" secondAttribute="trailing" constant="24" id="YUq-a3-eXo"/>
                             <constraint firstItem="L3z-6Z-Xx3" firstAttribute="trailing" secondItem="7zS-6T-Bcq" secondAttribute="trailing" id="b9S-qv-fgw"/>
                             <constraint firstItem="3Ft-3n-sqs" firstAttribute="leading" secondItem="7zS-6T-Bcq" secondAttribute="leading" constant="23" id="cCB-rO-Rua"/>
@@ -145,9 +145,7 @@
                             <constraint firstItem="egL-F3-qXK" firstAttribute="leading" secondItem="7zS-6T-Bcq" secondAttribute="leading" constant="24" id="kuA-GO-6nS"/>
                             <constraint firstItem="L3z-6Z-Xx3" firstAttribute="trailing" secondItem="7zS-6T-Bcq" secondAttribute="trailing" id="mOZ-mn-tbD"/>
                             <constraint firstItem="U1W-WT-6Cj" firstAttribute="top" secondItem="esc-GS-VQx" secondAttribute="bottom" constant="64" id="mzS-cN-b0p"/>
-                            <constraint firstItem="QJZ-Gy-0PQ" firstAttribute="leading" secondItem="7zS-6T-Bcq" secondAttribute="leading" constant="28" id="pkt-vK-t28"/>
                             <constraint firstItem="U1W-WT-6Cj" firstAttribute="leading" secondItem="7zS-6T-Bcq" secondAttribute="leading" constant="28" id="qet-mv-w6B"/>
-                            <constraint firstItem="QJZ-Gy-0PQ" firstAttribute="top" secondItem="7zS-6T-Bcq" secondAttribute="top" constant="24" id="urb-IZ-HXu"/>
                             <constraint firstItem="7zS-6T-Bcq" firstAttribute="trailing" secondItem="U1W-WT-6Cj" secondAttribute="trailing" constant="192" id="vHf-5h-gKp"/>
                             <constraint firstItem="egL-F3-qXK" firstAttribute="top" secondItem="3Ft-3n-sqs" secondAttribute="bottom" constant="29" id="w2v-xo-1a4"/>
                             <constraint firstItem="L3z-6Z-Xx3" firstAttribute="top" secondItem="hdg-Bx-JU3" secondAttribute="top" id="zS3-O3-RYk"/>
