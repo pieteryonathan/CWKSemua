@@ -39,6 +39,7 @@ class HStestingViewController: UIViewController {
         
         do{
             historys = try context.fetch(History.fetchRequest())
+            testingCollection.reloadData()
         }
         catch{
             
@@ -56,10 +57,12 @@ class HStestingViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        print("view Will appear")
         testingCollection.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        print("view did appeaar")
         testingCollection.reloadData()
     }
 
